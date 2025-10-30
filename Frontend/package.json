@@ -1,0 +1,26 @@
+{
+  "name": "gowilds",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "13.3.2",
+    "axios": "^1.13.1",
+    "lucide-react": "^0.548.0",
+    "next": "13.3.2",
+    "react": "18.2.0",
+    "react-bootstrap": "^1.6.1",
+    "react-countup": "^6.4.2",
+    "react-dom": "18.2.0",
+    "react-nice-select": "^1.0.4",
+    "react-slick": "^0.29.0",
+    "react-visibility-sensor": "^5.1.1",
+    "slick-carousel": "^1.8.1",
+    "wowjs": "^1.1.3"
+  }
+}

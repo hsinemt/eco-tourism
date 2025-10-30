@@ -1,0 +1,678 @@
+/* components/dashboard/carbon-optimizer.module.css */
+
+.container {
+    padding: 2rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8fafc;
+    min-height: 100vh;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    padding: 2rem;
+    background: #2c5530;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.2);
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+/* Error Message */
+.error {
+    background: #fee2e2;
+    border: 2px solid #ef4444;
+    color: #dc2626;
+    padding: 1.25rem 1.75rem;
+    border-radius: 16px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(239, 68, 68, 0.15);
+}
+
+.dismissError {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-size: 1.75rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.dismissError:hover {
+    background: rgba(220, 38, 38, 0.1);
+}
+
+/* Section Container */
+.section {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e2e8f0;
+}
+
+.section h2 {
+    font-size: 1.75rem;
+    color: #0f172a;
+    margin: 0 0 2rem 0;
+    font-weight: 800;
+}
+
+/* Generator Form */
+.generatorForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.formRow {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.formGroup {
+    flex: 1;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formGroup label {
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup select {
+    padding: 0.875rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+    outline: none;
+    border-color: #2c5530;
+    box-shadow: 0 0 0 4px rgba(44, 85, 48, 0.1);
+}
+
+/* Activities Section */
+.activitiesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+}
+
+.activitiesSection label {
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.activityInputGroup {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.activityInputGroup input {
+    flex: 1;
+    padding: 0.875rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+.activityInputGroup input:focus {
+    outline: none;
+    border-color: #2c5530;
+    box-shadow: 0 0 0 4px rgba(44, 85, 48, 0.1);
+}
+
+.addBtn {
+    padding: 0.875rem 1.5rem;
+    background: #10b981;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.addBtn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+}
+
+/* Activity Tags */
+.activityTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.activityTag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #2c5530;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.removeTag {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.3s;
+}
+
+.removeTag:hover {
+    transform: scale(1.2);
+}
+
+/* Buttons */
+.optimizeBtn {
+    padding: 1rem 2rem;
+    background: #2c5530;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(44, 85, 48, 0.2);
+}
+
+.optimizeBtn:hover:not(:disabled) {
+    background: #1e3a22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+}
+
+.optimizeBtn:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Results Header */
+.resultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.resultsHeader h2 {
+    margin: 0;
+}
+
+/* Summary Stats */
+.summaryStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.statBox {
+    background: linear-gradient(135deg, #f0f9f0 0%, #e0f2e0 100%);
+    border: 2px solid #c6f6d5;
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.statBox h3 {
+    font-size: 0.95rem;
+    color: #64748b;
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+}
+
+.statValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c5530;
+    margin: 0;
+}
+
+/* Details Box */
+.detailsBox {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detailsBox h3 {
+    margin: 0 0 1rem 0;
+    color: #0f172a;
+}
+
+.detailsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.detailItem {
+    padding: 1rem;
+    background: white;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.detailItem strong {
+    display: block;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.detailItem span {
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+/* Compensation Box */
+.compensationBox {
+    background: #fef08a;
+    border: 2px solid #eab308;
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.compensationBox h3 {
+    color: #854d0e;
+    margin: 0 0 1.5rem 0;
+}
+
+.productsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.productCard {
+    background: white;
+    border: 2px solid #eab308;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.productCard h4 {
+    margin: 0 0 0.5rem 0;
+    color: #0f172a;
+    font-size: 1.1rem;
+}
+
+.producer {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0.25rem 0 0.75rem 0;
+    font-weight: 600;
+}
+
+.description {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0.75rem 0;
+}
+
+.productDetails {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.productDetails span {
+    background: #f0f9f0;
+    color: #2c5530;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Itinerary Section */
+.itinerarySection {
+    margin-bottom: 2rem;
+}
+
+.itinerarySection h3 {
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+}
+
+.daysGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.dayCard {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.dayCard:hover {
+    border-color: #2c5530;
+    box-shadow: 0 8px 20px rgba(44, 85, 48, 0.15);
+    transform: translateY(-4px);
+}
+
+.dayHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.dayHeader h4 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 1.25rem;
+}
+
+.carbon {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.dayStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.dayStats div {
+    text-align: center;
+}
+
+.dayStats span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.dayStats strong {
+    display: block;
+    color: #2c5530;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.transport {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    font-style: italic;
+}
+
+.viewDetailsBtn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #2c5530;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.viewDetailsBtn:hover {
+    background: #1e3a22;
+    transform: translateY(-2px);
+}
+
+/* Suggestions Box */
+.suggestionsBox {
+    background: #dbeafe;
+    border: 2px solid #7dd3fc;
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+.suggestionsBox h3 {
+    color: #1e40af;
+    margin: 0 0 1rem 0;
+}
+
+.suggestionsList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.suggestionItem {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    color: #1e40af;
+    font-weight: 600;
+}
+
+.bullet {
+    font-weight: 800;
+}
+
+/* Modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 24px;
+    padding: 2.5rem;
+    max-width: 700px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: #f1f5f9;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #64748b;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    transition: all 0.3s;
+}
+
+.closeBtn:hover {
+    color: #0f172a;
+    background: #e2e8f0;
+    transform: rotate(90deg);
+}
+
+.modalContent h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 0 0 2rem 0;
+}
+
+/* Modal Stats */
+.modalStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.modalStat {
+    text-align: center;
+}
+
+.modalStat span {
+    display: block;
+    color: #64748b;
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.modalStat strong {
+    display: block;
+    color: #2c5530;
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.transportBox,
+.activitiesBox,
+.ecoBox {
+    background: #f8fafc;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.transportBox h3,
+.activitiesBox h3,
+.ecoBox h3 {
+    margin: 0 0 1rem 0;
+    color: #0f172a;
+}
+
+.ecoScore {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2c5530;
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+
+    .header h1 {
+        font-size: 1.75rem;
+    }
+
+    .formRow {
+        flex-direction: column;
+    }
+
+    .formGroup {
+        min-width: 100%;
+    }
+
+    .activityInputGroup {
+        flex-direction: column;
+    }
+
+    .summaryStats {
+        grid-template-columns: 1fr;
+    }
+
+    .daysGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .modalContent {
+        padding: 1.5rem;
+        width: 95%;
+    }
+}

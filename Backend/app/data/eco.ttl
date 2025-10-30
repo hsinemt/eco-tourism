@@ -1,0 +1,2450 @@
+@prefix : <http://www.ecotourism.org/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.ecotourism.org/ontology#> .
+
+<http://www.ecotourism.org/ontology#EcoTourismOntology> rdf:type owl:Ontology ;
+                                                         rdfs:comment "Comprehensive ontology for sustainable tourism management in Tunisia with extensive data"@en ;
+                                                         rdfs:label "Enhanced Ecotourism Tunisia Ontology"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ecotourism.org/ontology#availableInSeason
+:availableInSeason rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Activity ;
+                   rdfs:range :Season ;
+                   rdfs:label "available in season"@en .
+
+
+###  http://www.ecotourism.org/ontology#bookedBy
+:bookedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range :Tourist ;
+          rdfs:label "booked by"@en .
+
+
+###  http://www.ecotourism.org/ontology#concernsAccommodation
+:concernsAccommodation rdf:type owl:ObjectProperty ;
+                       rdfs:domain :Booking ;
+                       rdfs:range :Accommodation ;
+                       rdfs:label "concerns accommodation"@en .
+
+
+###  http://www.ecotourism.org/ontology#concernsActivity
+:concernsActivity rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Booking ;
+                  rdfs:range :Activity ;
+                  rdfs:label "concerns activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#connectsLocation
+:connectsLocation rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Transport ;
+                  rdfs:range :Location ;
+                  rdfs:label "connects location"@en .
+
+
+###  http://www.ecotourism.org/ontology#containsLocation
+:containsLocation rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Location ;
+                  rdfs:range :Location ;
+                  rdfs:label "contains location"@en .
+
+
+###  http://www.ecotourism.org/ontology#favorableFor
+:favorableFor rdf:type owl:ObjectProperty ;
+              rdfs:domain :Season ;
+              rdfs:range :Activity ;
+              rdfs:label "favorable for"@en .
+
+
+###  http://www.ecotourism.org/ontology#guidedBy
+:guidedBy rdf:type owl:ObjectProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range :Guide ;
+          rdfs:label "guided by"@en .
+
+
+###  http://www.ecotourism.org/ontology#guidesActivity
+:guidesActivity rdf:type owl:ObjectProperty ;
+                rdfs:domain :Guide ;
+                rdfs:range :Activity ;
+                rdfs:label "guides activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasAccommodation
+:hasAccommodation rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Location ;
+                  rdfs:range :Accommodation ;
+                  rdfs:label "has accommodation"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasImpact
+:hasImpact rdf:type owl:ObjectProperty ;
+           rdfs:domain :Transport ;
+           rdfs:range :SustainabilityIndicator ;
+           rdfs:label "has environmental impact"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasReview
+:hasReview rdf:type owl:ObjectProperty ;
+           rdfs:domain :Activity ;
+           rdfs:range :Feedback ;
+           rdfs:label "has review"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasSustainabilityMetric
+:hasSustainabilityMetric rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Accommodation ;
+                         rdfs:range :SustainabilityIndicator ;
+                         rdfs:label "has sustainability metric"@en .
+
+
+###  http://www.ecotourism.org/ontology#hostsActivity
+:hostsActivity rdf:type owl:ObjectProperty ;
+               rdfs:domain :Location ;
+               rdfs:range :Activity ;
+               rdfs:label "hosts activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Accommodation ;
+           rdfs:range :Location ;
+           rdfs:label "located in"@en .
+
+
+###  http://www.ecotourism.org/ontology#madeBy
+:madeBy rdf:type owl:ObjectProperty ;
+        rdfs:domain :Booking ;
+        rdfs:range :Tourist ;
+        rdfs:label "made by"@en .
+
+
+###  http://www.ecotourism.org/ontology#makesBooking
+:makesBooking rdf:type owl:ObjectProperty ;
+              rdfs:domain :Tourist ;
+              rdfs:range :Booking ;
+              rdfs:label "makes booking"@en .
+
+
+###  http://www.ecotourism.org/ontology#measuresImpactOf
+:measuresImpactOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain :SustainabilityIndicator ;
+                  rdfs:range :Accommodation ;
+                  rdfs:label "measures impact of"@en .
+
+
+###  http://www.ecotourism.org/ontology#operatedBy
+:operatedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Transport ;
+            rdfs:range :UserProfile ;
+            rdfs:label "operated by"@en .
+
+
+###  http://www.ecotourism.org/ontology#producedIn
+:producedIn rdf:type owl:ObjectProperty ;
+            rdfs:domain :LocalProduct ;
+            rdfs:range :Location ;
+            rdfs:label "produced in"@en .
+
+
+###  http://www.ecotourism.org/ontology#purchasedBy
+:purchasedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :LocalProduct ;
+             rdfs:range :Tourist ;
+             rdfs:label "purchased by"@en .
+
+
+###  http://www.ecotourism.org/ontology#receivesBooking
+:receivesBooking rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Accommodation ;
+                 rdfs:range :Booking ;
+                 rdfs:label "receives booking"@en .
+
+
+###  http://www.ecotourism.org/ontology#reviewedBy
+:reviewedBy rdf:type owl:ObjectProperty ;
+            rdfs:domain :Accommodation ;
+            rdfs:range :Feedback ;
+            rdfs:label "reviewed by"@en .
+
+
+###  http://www.ecotourism.org/ontology#reviewsAccommodation
+:reviewsAccommodation rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Feedback ;
+                      rdfs:range :Accommodation ;
+                      rdfs:label "reviews accommodation"@en .
+
+
+###  http://www.ecotourism.org/ontology#reviewsActivity
+:reviewsActivity rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Feedback ;
+                 rdfs:range :Activity ;
+                 rdfs:label "reviews activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#takesPlaceIn
+:takesPlaceIn rdf:type owl:ObjectProperty ;
+              rdfs:domain :Activity ;
+              rdfs:range :Location ;
+              rdfs:label "takes place in"@en .
+
+
+###  http://www.ecotourism.org/ontology#usedByTourist
+:usedByTourist rdf:type owl:ObjectProperty ;
+               rdfs:domain :Transport ;
+               rdfs:range :Tourist ;
+               rdfs:label "used by tourist"@en .
+
+
+###  http://www.ecotourism.org/ontology#writesReview
+:writesReview rdf:type owl:ObjectProperty ;
+              rdfs:domain :Tourist ;
+              rdfs:range :Feedback ;
+              rdfs:label "writes review"@en .
+
+
+###  http://www.ecotourism.org/ontology#writtenBy
+:writtenBy rdf:type owl:ObjectProperty ;
+           rdfs:domain :Feedback ;
+           rdfs:range :Tourist ;
+           rdfs:label "written by"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.ecotourism.org/ontology#accessibleForDisabled
+:accessibleForDisabled rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :PublicTransport ;
+                       rdfs:range xsd:boolean ;
+                       rdfs:label "accessible for disabled"@en .
+
+
+###  http://www.ecotourism.org/ontology#accommodationDescription
+:accommodationDescription rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Accommodation ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "description"@en .
+
+
+###  http://www.ecotourism.org/ontology#accommodationId
+:accommodationId rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Accommodation ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "accommodation ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#accommodationName
+:accommodationName rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Accommodation ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "accommodation name"@en .
+
+
+###  http://www.ecotourism.org/ontology#accommodationPhone
+:accommodationPhone rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Accommodation ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "phone number"@en .
+
+
+###  http://www.ecotourism.org/ontology#accommodationRating
+:accommodationRating rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Accommodation ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "average rating"@en .
+
+
+###  http://www.ecotourism.org/ontology#activityDescription
+:activityDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Activity ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "description"@en .
+
+
+###  http://www.ecotourism.org/ontology#activityId
+:activityId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Activity ;
+            rdfs:range xsd:string ;
+            rdfs:label "activity ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#activityLanguages
+:activityLanguages rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Activity ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "languages available"@en .
+
+
+###  http://www.ecotourism.org/ontology#activityName
+:activityName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Activity ;
+              rdfs:range xsd:string ;
+              rdfs:label "activity name"@en .
+
+
+###  http://www.ecotourism.org/ontology#activityRating
+:activityRating rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Activity ;
+                rdfs:range xsd:float ;
+                rdfs:label "average rating"@en .
+
+
+###  http://www.ecotourism.org/ontology#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Location ;
+         rdfs:range xsd:string ;
+         rdfs:label "address"@en .
+
+
+###  http://www.ecotourism.org/ontology#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Tourist ;
+     rdfs:range xsd:integer ;
+     rdfs:label "age"@en .
+
+
+###  http://www.ecotourism.org/ontology#areaSizeHectares
+:areaSizeHectares rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :NaturalSite ;
+                  rdfs:range xsd:float ;
+                  rdfs:label "area size (hectares)"@en .
+
+
+###  http://www.ecotourism.org/ontology#audioGuideAvailable
+:audioGuideAvailable rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :CulturalActivity ;
+                     rdfs:range xsd:boolean ;
+                     rdfs:label "audio guide available"@en .
+
+
+###  http://www.ecotourism.org/ontology#availability
+:availability rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Transport ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "currently available"@en .
+
+
+###  http://www.ecotourism.org/ontology#averageSpeed
+:averageSpeed rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Transport ;
+              rdfs:range xsd:float ;
+              rdfs:label "average speed (km/h)"@en .
+
+
+###  http://www.ecotourism.org/ontology#averageTemperature
+:averageTemperature rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Season ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "average temperature (°C)"@en .
+
+
+###  http://www.ecotourism.org/ontology#batteryRange
+:batteryRange rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Bike ;
+              rdfs:range xsd:float ;
+              rdfs:label "battery range (km)"@en .
+
+
+###  http://www.ecotourism.org/ontology#bestTimeToVisit
+:bestTimeToVisit rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :NatureActivity ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "best time to visit"@en .
+
+
+###  http://www.ecotourism.org/ontology#bikeModel
+:bikeModel rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Bike ;
+           rdfs:range xsd:string ;
+           rdfs:label "bike model"@en .
+
+
+###  http://www.ecotourism.org/ontology#binocularsProvided
+:binocularsProvided rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :NatureActivity ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "binoculars provided"@en .
+
+
+###  http://www.ecotourism.org/ontology#biodiversityIndex
+:biodiversityIndex rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :NaturalSite ;
+                   rdfs:range xsd:float ;
+                   rdfs:label "biodiversity index"@en .
+
+
+###  http://www.ecotourism.org/ontology#bookingDate
+:bookingDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Booking ;
+             rdfs:range xsd:dateTime ;
+             rdfs:label "booking date"@en .
+
+
+###  http://www.ecotourism.org/ontology#bookingId
+:bookingId rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Booking ;
+           rdfs:range xsd:string ;
+           rdfs:label "booking ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#bookingStatus
+:bookingStatus rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Booking ;
+               rdfs:range xsd:string ;
+               rdfs:label "booking status"@en .
+
+
+###  http://www.ecotourism.org/ontology#capacity
+:capacity rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Transport ;
+          rdfs:range xsd:integer ;
+          rdfs:label "passenger capacity"@en .
+
+
+###  http://www.ecotourism.org/ontology#carbonEmissionPerKm
+:carbonEmissionPerKm rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Transport ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "carbon emission per km (kg CO2)"@en .
+
+
+###  http://www.ecotourism.org/ontology#chargingTime
+:chargingTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ElectricVehicle ;
+              rdfs:range xsd:integer ;
+              rdfs:label "charging time (hours)"@en .
+
+
+###  http://www.ecotourism.org/ontology#checkInDate
+:checkInDate rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Booking ;
+             rdfs:range xsd:dateTime ;
+             rdfs:label "check-in date"@en .
+
+
+###  http://www.ecotourism.org/ontology#checkInTime
+:checkInTime rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Accommodation ;
+             rdfs:range xsd:string ;
+             rdfs:label "check-in time"@en .
+
+
+###  http://www.ecotourism.org/ontology#checkOutDate
+:checkOutDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Booking ;
+              rdfs:range xsd:dateTime ;
+              rdfs:label "check-out date"@en .
+
+
+###  http://www.ecotourism.org/ontology#checkOutTime
+:checkOutTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Accommodation ;
+              rdfs:range xsd:string ;
+              rdfs:label "check-out time"@en .
+
+
+###  http://www.ecotourism.org/ontology#climateType
+:climateType rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Region ;
+             rdfs:range xsd:string ;
+             rdfs:label "climate type"@en .
+
+
+###  http://www.ecotourism.org/ontology#comment
+:comment rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Feedback ;
+         rdfs:range xsd:string ;
+         rdfs:label "comment"@en .
+
+
+###  http://www.ecotourism.org/ontology#confirmationCode
+:confirmationCode rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Booking ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "confirmation code"@en .
+
+
+###  http://www.ecotourism.org/ontology#contactEmail
+:contactEmail rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Accommodation ;
+              rdfs:range xsd:string ;
+              rdfs:label "contact email"@en .
+
+
+###  http://www.ecotourism.org/ontology#contactPhone
+:contactPhone rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Transport ;
+              rdfs:range xsd:string ;
+              rdfs:label "contact phone"@en .
+
+
+###  http://www.ecotourism.org/ontology#culturalExperiences
+:culturalExperiences rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :GuestHouse ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "cultural experiences offered"@en .
+
+
+###  http://www.ecotourism.org/ontology#culturalTheme
+:culturalTheme rdf:type owl:DatatypeProperty ;
+               rdfs:domain :CulturalActivity ;
+               rdfs:range xsd:string ;
+               rdfs:label "cultural theme"@en .
+
+
+###  http://www.ecotourism.org/ontology#dailyRentalPrice
+:dailyRentalPrice rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :ElectricVehicle ;
+                  rdfs:range xsd:float ;
+                  rdfs:label "daily rental price (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#difficultyLevel
+:difficultyLevel rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Activity ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "difficulty level"@en .
+
+
+###  http://www.ecotourism.org/ontology#durationHours
+:durationHours rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Activity ;
+               rdfs:range xsd:integer ;
+               rdfs:label "duration (hours)"@en .
+
+
+###  http://www.ecotourism.org/ontology#ecoCertified
+:ecoCertified rdf:type owl:DatatypeProperty ;
+              rdfs:domain :EcoLodge ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "eco certified"@en .
+
+
+###  http://www.ecotourism.org/ontology#ecosystemType
+:ecosystemType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :NatureActivity ;
+               rdfs:range xsd:string ;
+               rdfs:label "ecosystem type"@en .
+
+
+###  http://www.ecotourism.org/ontology#endDate
+:endDate rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Season ;
+         rdfs:range xsd:dateTime ;
+         rdfs:label "end date"@en .
+
+
+###  http://www.ecotourism.org/ontology#entryFee
+:entryFee rdf:type owl:DatatypeProperty ;
+          rdfs:domain :NaturalSite ;
+          rdfs:range xsd:float ;
+          rdfs:label "entry fee (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#fairTradeCertified
+:fairTradeCertified rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :LocalProduct ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "fair trade certified"@en .
+
+
+###  http://www.ecotourism.org/ontology#familyOwned
+:familyOwned rdf:type owl:DatatypeProperty ;
+             rdfs:domain :GuestHouse ;
+             rdfs:range xsd:boolean ;
+             rdfs:label "family owned"@en .
+
+
+###  http://www.ecotourism.org/ontology#feedbackId
+:feedbackId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Feedback ;
+            rdfs:range xsd:string ;
+            rdfs:label "feedback ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#frameSize
+:frameSize rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Bike ;
+           rdfs:range xsd:string ;
+           rdfs:label "frame size"@en .
+
+
+###  http://www.ecotourism.org/ontology#frequencyMinutes
+:frequencyMinutes rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PublicTransport ;
+                  rdfs:range xsd:integer ;
+                  rdfs:label "frequency (minutes)"@en .
+
+
+###  http://www.ecotourism.org/ontology#guideLicenseNumber
+:guideLicenseNumber rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Guide ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "license number"@en .
+
+
+###  http://www.ecotourism.org/ontology#guideRating
+:guideRating rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Guide ;
+             rdfs:range xsd:float ;
+             rdfs:label "average rating"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasAirConditioning
+:hasAirConditioning rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :ElectricVehicle ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "has air conditioning"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasRestaurant
+:hasRestaurant rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Hotel ;
+               rdfs:range xsd:boolean ;
+               rdfs:label "has restaurant"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasSpa
+:hasSpa rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Hotel ;
+        rdfs:range xsd:boolean ;
+        rdfs:label "has spa"@en .
+
+
+###  http://www.ecotourism.org/ontology#hasSwimmingPool
+:hasSwimmingPool rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Hotel ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "has swimming pool"@en .
+
+
+###  http://www.ecotourism.org/ontology#helpfulVotes
+:helpfulVotes rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Feedback ;
+              rdfs:range xsd:integer ;
+              rdfs:label "helpful votes"@en .
+
+
+###  http://www.ecotourism.org/ontology#historicalPeriod
+:historicalPeriod rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :CulturalActivity ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "historical period"@en .
+
+
+###  http://www.ecotourism.org/ontology#homeCookedMeals
+:homeCookedMeals rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :GuestHouse ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "home cooked meals"@en .
+
+
+###  http://www.ecotourism.org/ontology#hourlyRate
+:hourlyRate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Guide ;
+            rdfs:range xsd:float ;
+            rdfs:label "hourly rate (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#indicatorId
+:indicatorId rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SustainabilityIndicator ;
+             rdfs:range xsd:string ;
+             rdfs:label "indicator ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#indicatorName
+:indicatorName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SustainabilityIndicator ;
+               rdfs:range xsd:string ;
+               rdfs:label "indicator name"@en .
+
+
+###  http://www.ecotourism.org/ontology#indicatorValue
+:indicatorValue rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SustainabilityIndicator ;
+                rdfs:range xsd:float ;
+                rdfs:label "indicator value"@en .
+
+
+###  http://www.ecotourism.org/ontology#isAvailable
+:isAvailable rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Guide ;
+             rdfs:range xsd:boolean ;
+             rdfs:label "currently available"@en .
+
+
+###  http://www.ecotourism.org/ontology#isElectric
+:isElectric rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Bike ;
+            rdfs:range xsd:boolean ;
+            rdfs:label "is electric"@en .
+
+
+###  http://www.ecotourism.org/ontology#isHandmade
+:isHandmade rdf:type owl:DatatypeProperty ;
+            rdfs:domain :LocalProduct ;
+            rdfs:range xsd:boolean ;
+            rdfs:label "is handmade"@en .
+
+
+###  http://www.ecotourism.org/ontology#isOrganic
+:isOrganic rdf:type owl:DatatypeProperty ;
+           rdfs:domain :LocalProduct ;
+           rdfs:range xsd:boolean ;
+           rdfs:label "is organic"@en .
+
+
+###  http://www.ecotourism.org/ontology#latitude
+:latitude rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Location ;
+          rdfs:range xsd:float ;
+          rdfs:label "latitude"@en .
+
+
+###  http://www.ecotourism.org/ontology#lineNumber
+:lineNumber rdf:type owl:DatatypeProperty ;
+            rdfs:domain :PublicTransport ;
+            rdfs:range xsd:string ;
+            rdfs:label "line number"@en .
+
+
+###  http://www.ecotourism.org/ontology#locationDescription
+:locationDescription rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Location ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "description"@en .
+
+
+###  http://www.ecotourism.org/ontology#locationId
+:locationId rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Location ;
+            rdfs:range xsd:string ;
+            rdfs:label "location ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#locationName
+:locationName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Location ;
+              rdfs:range xsd:string ;
+              rdfs:label "location name"@en .
+
+
+###  http://www.ecotourism.org/ontology#longitude
+:longitude rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Location ;
+           rdfs:range xsd:float ;
+           rdfs:label "longitude"@en .
+
+
+###  http://www.ecotourism.org/ontology#mainAttractions
+:mainAttractions rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Region ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "main attractions"@en .
+
+
+###  http://www.ecotourism.org/ontology#maxGuests
+:maxGuests rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Accommodation ;
+           rdfs:range xsd:integer ;
+           rdfs:label "max guests"@en .
+
+
+###  http://www.ecotourism.org/ontology#maxParticipants
+:maxParticipants rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Activity ;
+                 rdfs:range xsd:integer ;
+                 rdfs:label "max participants"@en .
+
+
+###  http://www.ecotourism.org/ontology#measurementDate
+:measurementDate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SustainabilityIndicator ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "measurement date"@en .
+
+
+###  http://www.ecotourism.org/ontology#measurementUnit
+:measurementUnit rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :SustainabilityIndicator ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "measurement unit"@en .
+
+
+###  http://www.ecotourism.org/ontology#minAge
+:minAge rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Activity ;
+        rdfs:range xsd:integer ;
+        rdfs:label "minimum age"@en .
+
+
+###  http://www.ecotourism.org/ontology#nationality
+:nationality rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Tourist ;
+             rdfs:range xsd:string ;
+             rdfs:label "nationality"@en .
+
+
+###  http://www.ecotourism.org/ontology#numberOfGuests
+:numberOfGuests rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Booking ;
+                rdfs:range xsd:integer ;
+                rdfs:label "number of guests"@en .
+
+
+###  http://www.ecotourism.org/ontology#numberOfRooms
+:numberOfRooms rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Accommodation ;
+               rdfs:range xsd:integer ;
+               rdfs:label "number of rooms"@en .
+
+
+###  http://www.ecotourism.org/ontology#operatingHours
+:operatingHours rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Transport ;
+                rdfs:range xsd:string ;
+                rdfs:label "operating hours"@en .
+
+
+###  http://www.ecotourism.org/ontology#organicFoodOffered
+:organicFoodOffered rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EcoLodge ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "organic food offered"@en .
+
+
+###  http://www.ecotourism.org/ontology#ownerResponse
+:ownerResponse rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Feedback ;
+               rdfs:range xsd:string ;
+               rdfs:label "owner response"@en .
+
+
+###  http://www.ecotourism.org/ontology#parkingAvailable
+:parkingAvailable rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Accommodation ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "parking available"@en .
+
+
+###  http://www.ecotourism.org/ontology#passportNumber
+:passportNumber rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Tourist ;
+                rdfs:range xsd:string ;
+                rdfs:label "passport number"@en .
+
+
+###  http://www.ecotourism.org/ontology#paymentMethod
+:paymentMethod rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Booking ;
+               rdfs:range xsd:string ;
+               rdfs:label "payment method"@en .
+
+
+###  http://www.ecotourism.org/ontology#peakTourismSeason
+:peakTourismSeason rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Season ;
+                   rdfs:range xsd:boolean ;
+                   rdfs:label "peak tourism season"@en .
+
+
+###  http://www.ecotourism.org/ontology#photographyAllowed
+:photographyAllowed rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :CulturalActivity ;
+                    rdfs:range xsd:boolean ;
+                    rdfs:label "photography allowed"@en .
+
+
+###  http://www.ecotourism.org/ontology#physicalFitnessRequired
+:physicalFitnessRequired rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :AdventureActivity ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "physical fitness required"@en .
+
+
+###  http://www.ecotourism.org/ontology#population
+:population rdf:type owl:DatatypeProperty ;
+            rdfs:domain :City ;
+            rdfs:range xsd:integer ;
+            rdfs:label "population"@en .
+
+
+###  http://www.ecotourism.org/ontology#postalCode
+:postalCode rdf:type owl:DatatypeProperty ;
+            rdfs:domain :City ;
+            rdfs:range xsd:string ;
+            rdfs:label "postal code"@en .
+
+
+###  http://www.ecotourism.org/ontology#preferences
+:preferences rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Tourist ;
+             rdfs:range xsd:string ;
+             rdfs:label "travel preferences"@en .
+
+
+###  http://www.ecotourism.org/ontology#pricePerKm
+:pricePerKm rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Transport ;
+            rdfs:range xsd:float ;
+            rdfs:label "price per km (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#pricePerNight
+:pricePerNight rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Accommodation ;
+               rdfs:range xsd:float ;
+               rdfs:label "price per night (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#pricePerPerson
+:pricePerPerson rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Activity ;
+                rdfs:range xsd:float ;
+                rdfs:label "price per person (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#producerName
+:producerName rdf:type owl:DatatypeProperty ;
+              rdfs:domain :LocalProduct ;
+              rdfs:range xsd:string ;
+              rdfs:label "producer name"@en .
+
+
+###  http://www.ecotourism.org/ontology#productCategory
+:productCategory rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :LocalProduct ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "category"@en .
+
+
+###  http://www.ecotourism.org/ontology#productDescription
+:productDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :LocalProduct ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "description"@en .
+
+
+###  http://www.ecotourism.org/ontology#productId
+:productId rdf:type owl:DatatypeProperty ;
+           rdfs:domain :LocalProduct ;
+           rdfs:range xsd:string ;
+           rdfs:label "product ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#productName
+:productName rdf:type owl:DatatypeProperty ;
+             rdfs:domain :LocalProduct ;
+             rdfs:range xsd:string ;
+             rdfs:label "product name"@en .
+
+
+###  http://www.ecotourism.org/ontology#productPrice
+:productPrice rdf:type owl:DatatypeProperty ;
+              rdfs:domain :LocalProduct ;
+              rdfs:range xsd:float ;
+              rdfs:label "price (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#protectedStatus
+:protectedStatus rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :NaturalSite ;
+                 rdfs:range xsd:boolean ;
+                 rdfs:label "protected status"@en .
+
+
+###  http://www.ecotourism.org/ontology#rating
+:rating rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Feedback ;
+        rdfs:range xsd:float ;
+        rdfs:label "rating (1-5)"@en .
+
+
+###  http://www.ecotourism.org/ontology#regionArea
+:regionArea rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Region ;
+            rdfs:range xsd:float ;
+            rdfs:label "region area (km²)"@en .
+
+
+###  http://www.ecotourism.org/ontology#registrationDate
+:registrationDate rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :UserProfile ;
+                  rdfs:range xsd:dateTime ;
+                  rdfs:label "registration date"@en .
+
+
+###  http://www.ecotourism.org/ontology#renewableEnergyPercent
+:renewableEnergyPercent rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :EcoLodge ;
+                        rdfs:range xsd:float ;
+                        rdfs:label "renewable energy percentage"@en .
+
+
+###  http://www.ecotourism.org/ontology#rentalPricePerHour
+:rentalPricePerHour rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Bike ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "rental price per hour (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#requiredEquipment
+:requiredEquipment rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :AdventureActivity ;
+                   rdfs:range xsd:string ;
+                   rdfs:label "required equipment"@en .
+
+
+###  http://www.ecotourism.org/ontology#reviewDate
+:reviewDate rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Feedback ;
+            rdfs:range xsd:dateTime ;
+            rdfs:label "review date"@en .
+
+
+###  http://www.ecotourism.org/ontology#riskLevel
+:riskLevel rdf:type owl:DatatypeProperty ;
+           rdfs:domain :AdventureActivity ;
+           rdfs:range xsd:integer ;
+           rdfs:label "risk level (1-10)"@en .
+
+
+###  http://www.ecotourism.org/ontology#roomService
+:roomService rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Hotel ;
+             rdfs:range xsd:boolean ;
+             rdfs:label "room service available"@en .
+
+
+###  http://www.ecotourism.org/ontology#routeDescription
+:routeDescription rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :PublicTransport ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "route description"@en .
+
+
+###  http://www.ecotourism.org/ontology#safetyBriefingRequired
+:safetyBriefingRequired rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :AdventureActivity ;
+                        rdfs:range xsd:boolean ;
+                        rdfs:label "safety briefing required"@en .
+
+
+###  http://www.ecotourism.org/ontology#schedule
+:schedule rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Activity ;
+          rdfs:range xsd:string ;
+          rdfs:label "schedule"@en .
+
+
+###  http://www.ecotourism.org/ontology#seasonName
+:seasonName rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Season ;
+            rdfs:range xsd:string ;
+            rdfs:label "season name"@en .
+
+
+###  http://www.ecotourism.org/ontology#seatingCapacity
+:seatingCapacity rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :ElectricVehicle ;
+                 rdfs:range xsd:integer ;
+                 rdfs:label "seating capacity"@en .
+
+
+###  http://www.ecotourism.org/ontology#specialRequests
+:specialRequests rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Booking ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "special requests"@en .
+
+
+###  http://www.ecotourism.org/ontology#specialization
+:specialization rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Guide ;
+                rdfs:range xsd:string ;
+                rdfs:label "specialization"@en .
+
+
+###  http://www.ecotourism.org/ontology#spokenLanguages
+:spokenLanguages rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Guide ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "spoken languages"@en .
+
+
+###  http://www.ecotourism.org/ontology#starRating
+:starRating rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Hotel ;
+            rdfs:range xsd:integer ;
+            rdfs:label "star rating"@en .
+
+
+###  http://www.ecotourism.org/ontology#startDate
+:startDate rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Season ;
+           rdfs:range xsd:dateTime ;
+           rdfs:label "start date"@en .
+
+
+###  http://www.ecotourism.org/ontology#stockQuantity
+:stockQuantity rdf:type owl:DatatypeProperty ;
+               rdfs:domain :LocalProduct ;
+               rdfs:range xsd:integer ;
+               rdfs:label "stock quantity"@en .
+
+
+###  http://www.ecotourism.org/ontology#targetValue
+:targetValue rdf:type owl:DatatypeProperty ;
+             rdfs:domain :SustainabilityIndicator ;
+             rdfs:range xsd:float ;
+             rdfs:label "target value"@en .
+
+
+###  http://www.ecotourism.org/ontology#ticketPrice
+:ticketPrice rdf:type owl:DatatypeProperty ;
+             rdfs:domain :PublicTransport ;
+             rdfs:range xsd:float ;
+             rdfs:label "ticket price (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#totalPrice
+:totalPrice rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Booking ;
+            rdfs:range xsd:float ;
+            rdfs:label "total price (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#touristAttractions
+:touristAttractions rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :City ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "tourist attractions"@en .
+
+
+###  http://www.ecotourism.org/ontology#traditionalArchitecture
+:traditionalArchitecture rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :GuestHouse ;
+                         rdfs:range xsd:boolean ;
+                         rdfs:label "traditional architecture"@en .
+
+
+###  http://www.ecotourism.org/ontology#transportId
+:transportId rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Transport ;
+             rdfs:range xsd:string ;
+             rdfs:label "transport ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#transportName
+:transportName rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Transport ;
+               rdfs:range xsd:string ;
+               rdfs:label "transport name"@en .
+
+
+###  http://www.ecotourism.org/ontology#transportType
+:transportType rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Transport ;
+               rdfs:range xsd:string ;
+               rdfs:label "transport type"@en .
+
+
+###  http://www.ecotourism.org/ontology#travelBudget
+:travelBudget rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Tourist ;
+              rdfs:range xsd:float ;
+              rdfs:label "travel budget (TND)"@en .
+
+
+###  http://www.ecotourism.org/ontology#userEmail
+:userEmail rdf:type owl:DatatypeProperty ;
+           rdfs:domain :UserProfile ;
+           rdfs:range xsd:string ;
+           rdfs:label "email"@en .
+
+
+###  http://www.ecotourism.org/ontology#userId
+:userId rdf:type owl:DatatypeProperty ;
+        rdfs:domain :UserProfile ;
+        rdfs:range xsd:string ;
+        rdfs:label "user ID"@en .
+
+
+###  http://www.ecotourism.org/ontology#userName
+:userName rdf:type owl:DatatypeProperty ;
+          rdfs:domain :UserProfile ;
+          rdfs:range xsd:string ;
+          rdfs:label "user name"@en .
+
+
+###  http://www.ecotourism.org/ontology#userPhone
+:userPhone rdf:type owl:DatatypeProperty ;
+           rdfs:domain :UserProfile ;
+           rdfs:range xsd:string ;
+           rdfs:label "phone number"@en .
+
+
+###  http://www.ecotourism.org/ontology#vehicleBatteryRange
+:vehicleBatteryRange rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ElectricVehicle ;
+                     rdfs:range xsd:float ;
+                     rdfs:label "battery range (km)"@en .
+
+
+###  http://www.ecotourism.org/ontology#vehicleModel
+:vehicleModel rdf:type owl:DatatypeProperty ;
+              rdfs:domain :ElectricVehicle ;
+              rdfs:range xsd:string ;
+              rdfs:label "vehicle model"@en .
+
+
+###  http://www.ecotourism.org/ontology#verifiedPurchase
+:verifiedPurchase rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :Feedback ;
+                  rdfs:range xsd:boolean ;
+                  rdfs:label "verified purchase"@en .
+
+
+###  http://www.ecotourism.org/ontology#wasteRecyclingRate
+:wasteRecyclingRate rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :EcoLodge ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "waste recycling rate (%)"@en .
+
+
+###  http://www.ecotourism.org/ontology#waterConservationSystem
+:waterConservationSystem rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :EcoLodge ;
+                         rdfs:range xsd:boolean ;
+                         rdfs:label "water conservation system"@en .
+
+
+###  http://www.ecotourism.org/ontology#wifiAvailable
+:wifiAvailable rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Accommodation ;
+               rdfs:range xsd:boolean ;
+               rdfs:label "WiFi available"@en .
+
+
+###  http://www.ecotourism.org/ontology#wildlifeSpotting
+:wildlifeSpotting rdf:type owl:DatatypeProperty ;
+                  rdfs:domain :NatureActivity ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "wildlife spotting opportunities"@en .
+
+
+###  http://www.ecotourism.org/ontology#wouldRecommend
+:wouldRecommend rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Feedback ;
+                rdfs:range xsd:boolean ;
+                rdfs:label "would recommend"@en .
+
+
+###  http://www.ecotourism.org/ontology#yearsOfExperience
+:yearsOfExperience rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Guide ;
+                   rdfs:range xsd:integer ;
+                   rdfs:label "years of experience"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ecotourism.org/ontology#Accommodation
+:Accommodation rdf:type owl:Class ;
+               rdfs:comment "Place to stay for tourists"@en ;
+               rdfs:label "Accommodation"@en .
+
+
+###  http://www.ecotourism.org/ontology#Activity
+:Activity rdf:type owl:Class ;
+          rdfs:comment "Tourism activity or experience"@en ;
+          rdfs:label "Activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#AdventureActivity
+:AdventureActivity rdf:type owl:Class ;
+                   rdfs:subClassOf :Activity ;
+                   rdfs:comment "Adventure-based tourism activity"@en ;
+                   rdfs:label "Adventure Activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#Bike
+:Bike rdf:type owl:Class ;
+      rdfs:subClassOf :Transport ;
+      rdfs:comment "Bicycle transport option"@en ;
+      rdfs:label "Bike"@en .
+
+
+###  http://www.ecotourism.org/ontology#Booking
+:Booking rdf:type owl:Class ;
+         rdfs:comment "Reservation for tourism services"@en ;
+         rdfs:label "Booking"@en .
+
+
+###  http://www.ecotourism.org/ontology#CarbonFootprint
+:CarbonFootprint rdf:type owl:Class ;
+                 rdfs:subClassOf :SustainabilityIndicator ;
+                 rdfs:comment "Carbon emission measurement"@en ;
+                 rdfs:label "Carbon Footprint"@en .
+
+
+###  http://www.ecotourism.org/ontology#City
+:City rdf:type owl:Class ;
+      rdfs:subClassOf :Location ;
+      rdfs:comment "Urban location"@en ;
+      rdfs:label "City"@en .
+
+
+###  http://www.ecotourism.org/ontology#CulturalActivity
+:CulturalActivity rdf:type owl:Class ;
+                  rdfs:subClassOf :Activity ;
+                  rdfs:comment "Cultural tourism activity"@en ;
+                  rdfs:label "Cultural Activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#EcoLodge
+:EcoLodge rdf:type owl:Class ;
+          rdfs:subClassOf :Accommodation ;
+          rdfs:comment "Environmentally sustainable accommodation"@en ;
+          rdfs:label "Eco Lodge"@en .
+
+
+###  http://www.ecotourism.org/ontology#ElectricVehicle
+:ElectricVehicle rdf:type owl:Class ;
+                 rdfs:subClassOf :Transport ;
+                 rdfs:comment "Electric vehicle transport"@en ;
+                 rdfs:label "Electric Vehicle"@en .
+
+
+###  http://www.ecotourism.org/ontology#Feedback
+:Feedback rdf:type owl:Class ;
+          rdfs:comment "User reviews and ratings"@en ;
+          rdfs:label "Feedback"@en .
+
+
+###  http://www.ecotourism.org/ontology#GuestHouse
+:GuestHouse rdf:type owl:Class ;
+            rdfs:subClassOf :Accommodation ;
+            rdfs:comment "Family-run guest house accommodation"@en ;
+            rdfs:label "Guest House"@en .
+
+
+###  http://www.ecotourism.org/ontology#Guide
+:Guide rdf:type owl:Class ;
+       rdfs:subClassOf :UserProfile ;
+       rdfs:comment "Professional tourism guide"@en ;
+       rdfs:label "Guide"@en .
+
+
+###  http://www.ecotourism.org/ontology#Hotel
+:Hotel rdf:type owl:Class ;
+       rdfs:subClassOf :Accommodation ;
+       rdfs:comment "Traditional hotel accommodation"@en ;
+       rdfs:label "Hotel"@en .
+
+
+###  http://www.ecotourism.org/ontology#LocalProduct
+:LocalProduct rdf:type owl:Class ;
+              rdfs:comment "Locally produced item"@en ;
+              rdfs:label "Local Product"@en .
+
+
+###  http://www.ecotourism.org/ontology#Location
+:Location rdf:type owl:Class ;
+          rdfs:comment "Geographic location"@en ;
+          rdfs:label "Location"@en .
+
+
+###  http://www.ecotourism.org/ontology#NaturalSite
+:NaturalSite rdf:type owl:Class ;
+             rdfs:subClassOf :Location ;
+             rdfs:comment "Natural tourism site"@en ;
+             rdfs:label "Natural Site"@en .
+
+
+###  http://www.ecotourism.org/ontology#NatureActivity
+:NatureActivity rdf:type owl:Class ;
+                rdfs:subClassOf :Activity ;
+                rdfs:comment "Nature-based tourism activity"@en ;
+                rdfs:label "Nature Activity"@en .
+
+
+###  http://www.ecotourism.org/ontology#PublicTransport
+:PublicTransport rdf:type owl:Class ;
+                 rdfs:subClassOf :Transport ;
+                 rdfs:comment "Public transportation system"@en ;
+                 rdfs:label "Public Transport"@en .
+
+
+###  http://www.ecotourism.org/ontology#Region
+:Region rdf:type owl:Class ;
+        rdfs:subClassOf :Location ;
+        rdfs:comment "Geographic region"@en ;
+        rdfs:label "Region"@en .
+
+
+###  http://www.ecotourism.org/ontology#RenewableEnergyUsage
+:RenewableEnergyUsage rdf:type owl:Class ;
+                      rdfs:subClassOf :SustainabilityIndicator ;
+                      rdfs:comment "Renewable energy consumption metric"@en ;
+                      rdfs:label "Renewable Energy Usage"@en .
+
+
+###  http://www.ecotourism.org/ontology#Season
+:Season rdf:type owl:Class ;
+        rdfs:comment "Tourism season"@en ;
+        rdfs:label "Season"@en .
+
+
+###  http://www.ecotourism.org/ontology#SustainabilityIndicator
+:SustainabilityIndicator rdf:type owl:Class ;
+                         rdfs:comment "Environmental sustainability metric"@en ;
+                         rdfs:label "Sustainability Indicator"@en .
+
+
+###  http://www.ecotourism.org/ontology#Tourist
+:Tourist rdf:type owl:Class ;
+         rdfs:subClassOf :UserProfile ;
+         rdfs:comment "Visitor exploring ecotourism destinations"@en ;
+         rdfs:label "Tourist"@en .
+
+
+###  http://www.ecotourism.org/ontology#Transport
+:Transport rdf:type owl:Class ;
+           rdfs:comment "Base class for all transport options"@en ;
+           rdfs:label "Transport"@en .
+
+
+###  http://www.ecotourism.org/ontology#UserProfile
+:UserProfile rdf:type owl:Class ;
+             rdfs:comment "Base class for all user profiles"@en ;
+             rdfs:label "User Profile"@en .
+
+
+###  http://www.ecotourism.org/ontology#WaterConsumption
+:WaterConsumption rdf:type owl:Class ;
+                  rdfs:subClassOf :SustainabilityIndicator ;
+                  rdfs:comment "Water usage measurement"@en ;
+                  rdfs:label "Water Consumption"@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.ecotourism.org/ontology#Adventure_Diving
+:Adventure_Diving rdf:type owl:NamedIndividual ,
+                           :AdventureActivity ;
+                  :activityDescription "Scuba diving exploration of Mediterranean marine life and underwater caves" ;
+                  :activityId "ADV-003" ;
+                  :activityLanguages "English, French, Italian" ;
+                  :activityName "Mediterranean Scuba Diving" ;
+                  :activityRating "4.9"^^xsd:float ;
+                  :difficultyLevel "Beginner-Intermediate" ;
+                  :durationHours 4 ;
+                  :maxParticipants 6 ;
+                  :minAge 12 ;
+                  :physicalFitnessRequired "Basic swimming skills" ;
+                  :pricePerPerson "180.0"^^xsd:float ;
+                  :requiredEquipment "Diving certification, swimsuit, towel (equipment provided)" ;
+                  :riskLevel 5 ;
+                  :safetyBriefingRequired "true"^^xsd:boolean ;
+                  :schedule "Daily 9:00 AM and 2:00 PM sessions" .
+
+
+###  http://www.ecotourism.org/ontology#Adventure_RockClimbing
+:Adventure_RockClimbing rdf:type owl:NamedIndividual ,
+                                 :AdventureActivity ;
+                        :activityDescription "Guided rock climbing experience in the Atlas Mountains with professional equipment" ;
+                        :activityId "ADV-002" ;
+                        :activityLanguages "English, French" ;
+                        :activityName "Mountain Rock Climbing" ;
+                        :activityRating "4.6"^^xsd:float ;
+                        :difficultyLevel "Intermediate" ;
+                        :durationHours 6 ;
+                        :maxParticipants 8 ;
+                        :minAge 14 ;
+                        :physicalFitnessRequired "Moderate fitness level" ;
+                        :pricePerPerson "120.0"^^xsd:float ;
+                        :requiredEquipment "Climbing shoes, helmet, harness (provided)" ;
+                        :riskLevel 7 ;
+                        :safetyBriefingRequired "true"^^xsd:boolean ;
+                        :schedule "Daily 8:00 AM - 2:00 PM" .
+
+
+###  http://www.ecotourism.org/ontology#Adventure_SaharaTrek
+:Adventure_SaharaTrek rdf:type owl:NamedIndividual ,
+                               :AdventureActivity ;
+                      :availableInSeason :Season_Autumn ,
+                                         :Season_Spring ,
+                                         :Season_Winter ;
+                      :guidedBy :Guide_MohamedBenAli ;
+                      :hasReview :Feedback_001 ;
+                      :takesPlaceIn :Region_Sahel ;
+                      :activityDescription "Multi-day trek through the Sahara desert with overnight camping under the stars" ;
+                      :activityId "ADV-001" ;
+                      :activityLanguages "English, French, Arabic" ;
+                      :activityName "Sahara Desert Trek" ;
+                      :activityRating "4.8"^^xsd:float ;
+                      :difficultyLevel "Moderate" ;
+                      :durationHours 48 ;
+                      :maxParticipants 12 ;
+                      :minAge 16 ;
+                      :physicalFitnessRequired "Good physical condition required" ;
+                      :pricePerPerson "450.0"^^xsd:float ;
+                      :requiredEquipment "Hiking boots, backpack, sleeping bag, water containers" ;
+                      :riskLevel 6 ;
+                      :safetyBriefingRequired "true"^^xsd:boolean ;
+                      :schedule "Weekly departures every Saturday" .
+
+
+###  http://www.ecotourism.org/ontology#Bike_City_03
+:Bike_City_03 rdf:type owl:NamedIndividual ,
+                       :Bike ;
+              :availability "true"^^xsd:boolean ;
+              :averageSpeed "20.0"^^xsd:float ;
+              :batteryRange "0.0"^^xsd:float ;
+              :bikeModel "UrbanRider 200" ;
+              :capacity 1 ;
+              :carbonEmissionPerKm "0.0"^^xsd:float ;
+              :contactPhone "+216 71 234 569" ;
+              :frameSize "Small (50cm)" ;
+              :isElectric "false"^^xsd:boolean ;
+              :operatingHours "Daily 7:00 AM - 9:00 PM" ;
+              :pricePerKm "0.0"^^xsd:float ;
+              :rentalPricePerHour "4.0"^^xsd:float ;
+              :transportId "BIKE-003" ;
+              :transportName "City Cruiser Bike" ;
+              :transportType "City Bike" .
+
+
+###  http://www.ecotourism.org/ontology#Bike_EcoCity_01
+:Bike_EcoCity_01 rdf:type owl:NamedIndividual ,
+                          :Bike ;
+                 :connectsLocation :City_Tunis ,
+                                   :NaturalSite_IchkeulPark ;
+                 :hasImpact :Carbon_VeryLow ;
+                 :operatedBy :Guide_MohamedBenAli ;
+                 :availability "true"^^xsd:boolean ;
+                 :averageSpeed "25.0"^^xsd:float ;
+                 :batteryRange "60.0"^^xsd:float ;
+                 :bikeModel "E-Cruiser 3000" ;
+                 :capacity 1 ;
+                 :carbonEmissionPerKm "0.0"^^xsd:float ;
+                 :contactPhone "+216 71 234 567" ;
+                 :frameSize "Medium (54cm)" ;
+                 :isElectric "true"^^xsd:boolean ;
+                 :operatingHours "Daily 7:00 AM - 8:00 PM" ;
+                 :pricePerKm "0.0"^^xsd:float ;
+                 :rentalPricePerHour "8.0"^^xsd:float ;
+                 :transportId "BIKE-001" ;
+                 :transportName "EcoCity Electric Bike" ;
+                 :transportType "Electric Bike" .
+
+
+###  http://www.ecotourism.org/ontology#Bike_ElectricTour_04
+:Bike_ElectricTour_04 rdf:type owl:NamedIndividual ,
+                               :Bike ;
+                      :availability "true"^^xsd:boolean ;
+                      :averageSpeed "28.0"^^xsd:float ;
+                      :batteryRange "80.0"^^xsd:float ;
+                      :bikeModel "TourMaster E500" ;
+                      :capacity 1 ;
+                      :carbonEmissionPerKm "0.0"^^xsd:float ;
+                      :contactPhone "+216 71 234 570" ;
+                      :frameSize "Medium (54cm)" ;
+                      :isElectric "true"^^xsd:boolean ;
+                      :operatingHours "Daily 8:00 AM - 6:00 PM" ;
+                      :pricePerKm "0.0"^^xsd:float ;
+                      :rentalPricePerHour "10.0"^^xsd:float ;
+                      :transportId "BIKE-004" ;
+                      :transportName "Tourist Electric Bike" ;
+                      :transportType "Electric Touring Bike" .
+
+
+###  http://www.ecotourism.org/ontology#Bike_Mountain_02
+:Bike_Mountain_02 rdf:type owl:NamedIndividual ,
+                           :Bike ;
+                  :availability "true"^^xsd:boolean ;
+                  :averageSpeed "18.0"^^xsd:float ;
+                  :batteryRange "0.0"^^xsd:float ;
+                  :bikeModel "TrailBlazer X5" ;
+                  :capacity 1 ;
+                  :carbonEmissionPerKm "0.0"^^xsd:float ;
+                  :contactPhone "+216 71 234 568" ;
+                  :frameSize "Large (58cm)" ;
+                  :isElectric "false"^^xsd:boolean ;
+                  :operatingHours "Daily 6:00 AM - 7:00 PM" ;
+                  :pricePerKm "0.0"^^xsd:float ;
+                  :rentalPricePerHour "5.0"^^xsd:float ;
+                  :transportId "BIKE-002" ;
+                  :transportName "Mountain Explorer Bike" ;
+                  :transportType "Mountain Bike" .
+
+
+###  http://www.ecotourism.org/ontology#Bike_Tandem_05
+:Bike_Tandem_05 rdf:type owl:NamedIndividual ,
+                         :Bike ;
+                :availability "true"^^xsd:boolean ;
+                :averageSpeed "22.0"^^xsd:float ;
+                :batteryRange "0.0"^^xsd:float ;
+                :bikeModel "DuoRider Classic" ;
+                :capacity 2 ;
+                :carbonEmissionPerKm "0.0"^^xsd:float ;
+                :contactPhone "+216 71 234 571" ;
+                :frameSize "Standard" ;
+                :isElectric "false"^^xsd:boolean ;
+                :operatingHours "Daily 8:00 AM - 7:00 PM" ;
+                :pricePerKm "0.0"^^xsd:float ;
+                :rentalPricePerHour "12.0"^^xsd:float ;
+                :transportId "BIKE-005" ;
+                :transportName "Tandem Adventure Bike" ;
+                :transportType "Tandem Bike" .
+
+
+###  http://www.ecotourism.org/ontology#Booking_001
+:Booking_001 rdf:type owl:NamedIndividual ;
+             :concernsAccommodation :EcoLodge_GreenValley ;
+             :concernsActivity :Adventure_SaharaTrek ;
+             :madeBy :Tourist_AliceJohnson .
+
+
+###  http://www.ecotourism.org/ontology#Booking_002
+:Booking_002 rdf:type owl:NamedIndividual ;
+             :concernsAccommodation :GuestHouse_MedinaHeart ;
+             :concernsActivity :Cultural_MuseumTour ;
+             :madeBy :Tourist_BenjaminMartin .
+
+
+###  http://www.ecotourism.org/ontology#Booking_003
+:Booking_003 rdf:type owl:NamedIndividual ;
+             :concernsActivity :Adventure_RockClimbing ;
+             :madeBy :Tourist_SarahMuller .
+
+
+###  http://www.ecotourism.org/ontology#Carbon_Low
+:Carbon_Low rdf:type owl:NamedIndividual ,
+                     :CarbonFootprint ;
+            :indicatorId "IND-C-002" ;
+            :indicatorName "Low Carbon Footprint" ;
+            :indicatorValue "5.0"^^xsd:float ;
+            :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+            :measurementUnit "kg CO2 per guest per night" ;
+            :targetValue "4.5"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#Carbon_Medium
+:Carbon_Medium rdf:type owl:NamedIndividual ,
+                        :CarbonFootprint ;
+               :indicatorId "IND-C-003" ;
+               :indicatorName "Medium Carbon Footprint" ;
+               :indicatorValue "8.5"^^xsd:float ;
+               :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+               :measurementUnit "kg CO2 per guest per night" ;
+               :targetValue "7.5"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#Carbon_VeryLow
+:Carbon_VeryLow rdf:type owl:NamedIndividual ,
+                         :CarbonFootprint ;
+                :measuresImpactOf :EcoLodge_DesertOasis ,
+                                  :EcoLodge_GreenValley ;
+                :indicatorId "IND-C-001" ;
+                :indicatorName "Very Low Carbon Footprint" ;
+                :indicatorValue "2.5"^^xsd:float ;
+                :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+                :measurementUnit "kg CO2 per guest per night" ;
+                :targetValue "2.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#City_Hammamet
+:City_Hammamet rdf:type owl:NamedIndividual ,
+                        :City ;
+               :address "Coastal Resort Town, Tunisia" ;
+               :latitude "36.4"^^xsd:float ;
+               :locationDescription "Popular beach resort town known for its beautiful coastline and historic kasbah" ;
+               :locationId "CITY-003" ;
+               :locationName "Hammamet" ;
+               :longitude "10.6167"^^xsd:float ;
+               :population 97579 ;
+               :postalCode "8050" ;
+               :touristAttractions "Hammamet Beach, Medina of Hammamet, International Cultural Center, Yasmin Hammamet" .
+
+
+###  http://www.ecotourism.org/ontology#City_Sousse
+:City_Sousse rdf:type owl:NamedIndividual ,
+                      :City ;
+             :address "Coastal City, Tunisia" ;
+             :latitude "35.8288"^^xsd:float ;
+             :locationDescription "Major coastal city with beautiful beaches, historic medina, and vibrant souks" ;
+             :locationId "CITY-002" ;
+             :locationName "Sousse" ;
+             :longitude "10.6405"^^xsd:float ;
+             :population 221530 ;
+             :postalCode "4000" ;
+             :touristAttractions "Sousse Medina, Ribat of Sousse, Port El Kantaoui, Archaeological Museum" .
+
+
+###  http://www.ecotourism.org/ontology#City_Tunis
+:City_Tunis rdf:type owl:NamedIndividual ,
+                     :City ;
+            :containsLocation :GuestHouse_MedinaHeart ;
+            :hasAccommodation :Hotel_GrandPalace ;
+            :hostsActivity :Cultural_MedinaWalk ;
+            :address "Capital City of Tunisia" ;
+            :latitude "36.8065"^^xsd:float ;
+            :locationDescription "Historic capital city with ancient medina, modern districts, and rich cultural heritage" ;
+            :locationId "CITY-001" ;
+            :locationName "Tunis" ;
+            :longitude "10.1815"^^xsd:float ;
+            :population 638845 ;
+            :postalCode "1000" ;
+            :touristAttractions "Ancient Medina, Bardo Museum, Cathedral of St. Vincent de Paul, Habib Bourguiba Avenue" .
+
+
+###  http://www.ecotourism.org/ontology#Cultural_MedinaWalk
+:Cultural_MedinaWalk rdf:type owl:NamedIndividual ,
+                              :CulturalActivity ;
+                     :availableInSeason :Season_Autumn ,
+                                        :Season_Spring ;
+                     :guidedBy :Guide_FatimaTrabelsi ;
+                     :hasReview :Feedback_002 ;
+                     :takesPlaceIn :City_Tunis ;
+                     :activityDescription "Guided tour through the ancient medina exploring traditional architecture and local markets" ;
+                     :activityId "CULT-001" ;
+                     :activityLanguages "English, French, Arabic, Spanish" ;
+                     :activityName "Historic Medina Walking Tour" ;
+                     :activityRating "4.7"^^xsd:float ;
+                     :audioGuideAvailable "true"^^xsd:boolean ;
+                     :culturalTheme "Islamic Architecture and Traditional Crafts" ;
+                     :difficultyLevel "Easy" ;
+                     :durationHours 3 ;
+                     :historicalPeriod "8th-19th Century" ;
+                     :maxParticipants 15 ;
+                     :minAge 8 ;
+                     :photographyAllowed "true"^^xsd:boolean ;
+                     :pricePerPerson "45.0"^^xsd:float ;
+                     :schedule "Daily 10:00 AM and 4:00 PM" .
+
+
+###  http://www.ecotourism.org/ontology#Cultural_MuseumTour
+:Cultural_MuseumTour rdf:type owl:NamedIndividual ,
+                              :CulturalActivity ;
+                     :activityDescription "Expert-guided tour of ancient Roman and Carthaginian artifacts" ;
+                     :activityId "CULT-002" ;
+                     :activityLanguages "English, French, German" ;
+                     :activityName "National Museum Artifacts Tour" ;
+                     :activityRating "4.5"^^xsd:float ;
+                     :audioGuideAvailable "true"^^xsd:boolean ;
+                     :culturalTheme "Ancient History and Archaeology" ;
+                     :difficultyLevel "Easy" ;
+                     :durationHours 2 ;
+                     :historicalPeriod "Roman and Carthaginian Era" ;
+                     :maxParticipants 20 ;
+                     :minAge 10 ;
+                     :photographyAllowed "false"^^xsd:boolean ;
+                     :pricePerPerson "35.0"^^xsd:float ;
+                     :schedule "Tuesday-Sunday 11:00 AM and 3:00 PM" .
+
+
+###  http://www.ecotourism.org/ontology#Cultural_RomanRuins
+:Cultural_RomanRuins rdf:type owl:NamedIndividual ,
+                              :CulturalActivity ;
+                     :activityDescription "Full-day tour of ancient Roman ruins including amphitheaters and temples" ;
+                     :activityId "CULT-003" ;
+                     :activityLanguages "English, French, Italian" ;
+                     :activityName "Roman Ruins Exploration" ;
+                     :activityRating "4.8"^^xsd:float ;
+                     :audioGuideAvailable "true"^^xsd:boolean ;
+                     :culturalTheme "Roman History and Architecture" ;
+                     :difficultyLevel "Easy-Moderate" ;
+                     :durationHours 8 ;
+                     :historicalPeriod "2nd-5th Century AD" ;
+                     :maxParticipants 12 ;
+                     :minAge 10 ;
+                     :photographyAllowed "true"^^xsd:boolean ;
+                     :pricePerPerson "85.0"^^xsd:float ;
+                     :schedule "Wednesday and Saturday 8:00 AM - 4:00 PM" .
+
+
+###  http://www.ecotourism.org/ontology#EV_Nissan_02
+:EV_Nissan_02 rdf:type owl:NamedIndividual ,
+                       :ElectricVehicle ;
+              :availability "true"^^xsd:boolean ;
+              :averageSpeed "85.0"^^xsd:float ;
+              :capacity 7 ;
+              :carbonEmissionPerKm "0.0"^^xsd:float ;
+              :chargingTime 7 ;
+              :contactPhone "+216 71 345 679" ;
+              :dailyRentalPrice "200.0"^^xsd:float ;
+              :hasAirConditioning "true"^^xsd:boolean ;
+              :operatingHours "24/7 with advance booking" ;
+              :pricePerKm "0.6"^^xsd:float ;
+              :seatingCapacity 7 ;
+              :transportId "EV-002" ;
+              :transportName "Family Electric SUV" ;
+              :transportType "Electric SUV" ;
+              :vehicleBatteryRange "400.0"^^xsd:float ;
+              :vehicleModel "Nissan Ariya" .
+
+
+###  http://www.ecotourism.org/ontology#EV_Renault_03
+:EV_Renault_03 rdf:type owl:NamedIndividual ,
+                        :ElectricVehicle ;
+               :availability "true"^^xsd:boolean ;
+               :averageSpeed "80.0"^^xsd:float ;
+               :capacity 4 ;
+               :carbonEmissionPerKm "0.0"^^xsd:float ;
+               :chargingTime 6 ;
+               :contactPhone "+216 71 345 680" ;
+               :dailyRentalPrice "120.0"^^xsd:float ;
+               :hasAirConditioning "true"^^xsd:boolean ;
+               :operatingHours "Daily 6:00 AM - 10:00 PM" ;
+               :pricePerKm "0.4"^^xsd:float ;
+               :seatingCapacity 4 ;
+               :transportId "EV-003" ;
+               :transportName "Compact Electric City Car" ;
+               :transportType "Electric Compact" ;
+               :vehicleBatteryRange "320.0"^^xsd:float ;
+               :vehicleModel "Renault Zoe" .
+
+
+###  http://www.ecotourism.org/ontology#EV_Tesla_01
+:EV_Tesla_01 rdf:type owl:NamedIndividual ,
+                      :ElectricVehicle ;
+             :connectsLocation :City_Tunis ,
+                               :Region_Sahel ;
+             :hasImpact :Carbon_VeryLow ;
+             :availability "true"^^xsd:boolean ;
+             :averageSpeed "90.0"^^xsd:float ;
+             :capacity 5 ;
+             :carbonEmissionPerKm "0.0"^^xsd:float ;
+             :chargingTime 8 ;
+             :contactPhone "+216 71 345 678" ;
+             :dailyRentalPrice "180.0"^^xsd:float ;
+             :hasAirConditioning "true"^^xsd:boolean ;
+             :operatingHours "24/7 with advance booking" ;
+             :pricePerKm "0.5"^^xsd:float ;
+             :seatingCapacity 5 ;
+             :transportId "EV-001" ;
+             :transportName "Premium Electric Sedan" ;
+             :transportType "Electric Car" ;
+             :vehicleBatteryRange "450.0"^^xsd:float ;
+             :vehicleModel "Tesla Model 3" .
+
+
+###  http://www.ecotourism.org/ontology#EV_Van_04
+:EV_Van_04 rdf:type owl:NamedIndividual ,
+                    :ElectricVehicle ;
+           :availability "true"^^xsd:boolean ;
+           :averageSpeed "75.0"^^xsd:float ;
+           :capacity 8 ;
+           :carbonEmissionPerKm "0.0"^^xsd:float ;
+           :chargingTime 9 ;
+           :contactPhone "+216 71 345 681" ;
+           :dailyRentalPrice "250.0"^^xsd:float ;
+           :hasAirConditioning "true"^^xsd:boolean ;
+           :operatingHours "24/7 with advance booking" ;
+           :pricePerKm "0.7"^^xsd:float ;
+           :seatingCapacity 8 ;
+           :transportId "EV-004" ;
+           :transportName "Electric Tour Van" ;
+           :transportType "Electric Minivan" ;
+           :vehicleBatteryRange "350.0"^^xsd:float ;
+           :vehicleModel "Mercedes eVito" .
+
+
+###  http://www.ecotourism.org/ontology#EcoLodge_DesertOasis
+:EcoLodge_DesertOasis rdf:type owl:NamedIndividual ,
+                               :EcoLodge ;
+                      :accommodationDescription "Traditional desert accommodation with modern sustainable features" ;
+                      :accommodationId "ECO-002" ;
+                      :accommodationName "Desert Oasis Eco Lodge" ;
+                      :accommodationPhone "+216 75 234 567" ;
+                      :accommodationRating "4.8"^^xsd:float ;
+                      :checkInTime "15:00" ;
+                      :checkOutTime "12:00" ;
+                      :contactEmail "stay@desertoasis.tn" ;
+                      :ecoCertified "true"^^xsd:boolean ;
+                      :maxGuests 16 ;
+                      :numberOfRooms 8 ;
+                      :organicFoodOffered "true"^^xsd:boolean ;
+                      :parkingAvailable "true"^^xsd:boolean ;
+                      :pricePerNight "220.0"^^xsd:float ;
+                      :renewableEnergyPercent "95.0"^^xsd:float ;
+                      :wasteRecyclingRate "85.0"^^xsd:float ;
+                      :waterConservationSystem "true"^^xsd:boolean ;
+                      :wifiAvailable "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#EcoLodge_GreenValley
+:EcoLodge_GreenValley rdf:type owl:NamedIndividual ,
+                               :EcoLodge ;
+                      :hasSustainabilityMetric :Carbon_VeryLow ,
+                                               :RenewableEnergy_Excellent ,
+                                               :Water_Efficient ;
+                      :locatedIn :Region_TunisRegion ;
+                      :receivesBooking :Booking_001 ;
+                      :reviewedBy :Feedback_001 ;
+                      :accommodationDescription "Sustainable lodge nestled in a protected valley with organic farming" ;
+                      :accommodationId "ECO-001" ;
+                      :accommodationName "Green Valley Eco Lodge" ;
+                      :accommodationPhone "+216 71 123 456" ;
+                      :accommodationRating "4.7"^^xsd:float ;
+                      :checkInTime "14:00" ;
+                      :checkOutTime "11:00" ;
+                      :contactEmail "info@greenvalley.tn" ;
+                      :ecoCertified "true"^^xsd:boolean ;
+                      :maxGuests 24 ;
+                      :numberOfRooms 12 ;
+                      :organicFoodOffered "true"^^xsd:boolean ;
+                      :parkingAvailable "true"^^xsd:boolean ;
+                      :pricePerNight "180.0"^^xsd:float ;
+                      :renewableEnergyPercent "85.0"^^xsd:float ;
+                      :wasteRecyclingRate "90.0"^^xsd:float ;
+                      :waterConservationSystem "true"^^xsd:boolean ;
+                      :wifiAvailable "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#Feedback_001
+:Feedback_001 rdf:type owl:NamedIndividual ;
+              :reviewsAccommodation :EcoLodge_GreenValley ;
+              :reviewsActivity :Adventure_SaharaTrek ;
+              :writtenBy :Tourist_AliceJohnson .
+
+
+###  http://www.ecotourism.org/ontology#Feedback_002
+:Feedback_002 rdf:type owl:NamedIndividual ;
+              :reviewsActivity :Cultural_MuseumTour ;
+              :writtenBy :Tourist_BenjaminMartin .
+
+
+###  http://www.ecotourism.org/ontology#Feedback_003
+:Feedback_003 rdf:type owl:NamedIndividual ;
+              :reviewsActivity :Adventure_RockClimbing ;
+              :writtenBy :Tourist_SarahMuller .
+
+
+###  http://www.ecotourism.org/ontology#GuestHouse_CoastalRetreat
+:GuestHouse_CoastalRetreat rdf:type owl:NamedIndividual ,
+                                    :GuestHouse ;
+                           :accommodationDescription "Seaside family guest house with authentic Tunisian hospitality" ;
+                           :accommodationId "GUEST-002" ;
+                           :accommodationName "Coastal Retreat Guest House" ;
+                           :accommodationPhone "+216 73 456 789" ;
+                           :accommodationRating "4.6"^^xsd:float ;
+                           :checkInTime "14:00" ;
+                           :checkOutTime "11:00" ;
+                           :contactEmail "info@coastalretreat.tn" ;
+                           :culturalExperiences "Fishing trips, seafood cooking classes, beach bonfires" ;
+                           :familyOwned "true"^^xsd:boolean ;
+                           :homeCookedMeals "true"^^xsd:boolean ;
+                           :maxGuests 16 ;
+                           :numberOfRooms 8 ;
+                           :parkingAvailable "true"^^xsd:boolean ;
+                           :pricePerNight "95.0"^^xsd:float ;
+                           :traditionalArchitecture "true"^^xsd:boolean ;
+                           :wifiAvailable "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#GuestHouse_MedinaHeart
+:GuestHouse_MedinaHeart rdf:type owl:NamedIndividual ,
+                                 :GuestHouse ;
+                        :locatedIn :City_Tunis ;
+                        :receivesBooking :Booking_002 ;
+                        :accommodationDescription "Traditional family-run guest house in the heart of the medina" ;
+                        :accommodationId "GUEST-001" ;
+                        :accommodationName "Medina Heart Guest House" ;
+                        :accommodationPhone "+216 71 345 678" ;
+                        :accommodationRating "4.5"^^xsd:float ;
+                        :checkInTime "13:00" ;
+                        :checkOutTime "11:00" ;
+                        :contactEmail "hello@medinaheart.tn" ;
+                        :culturalExperiences "Cooking classes, traditional music nights, guided medina tours" ;
+                        :familyOwned "true"^^xsd:boolean ;
+                        :homeCookedMeals "true"^^xsd:boolean ;
+                        :maxGuests 12 ;
+                        :numberOfRooms 6 ;
+                        :parkingAvailable "false"^^xsd:boolean ;
+                        :pricePerNight "80.0"^^xsd:float ;
+                        :traditionalArchitecture "true"^^xsd:boolean ;
+                        :wifiAvailable "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#Guide_AhmedKhalil
+:Guide_AhmedKhalil rdf:type owl:NamedIndividual ;
+                   :guidesActivity :Nature_BirdWatching ,
+                                   :Nature_ForestHike .
+
+
+###  http://www.ecotourism.org/ontology#Guide_FatimaTrabelsi
+:Guide_FatimaTrabelsi rdf:type owl:NamedIndividual ;
+                      :guidesActivity :Cultural_MedinaWalk ,
+                                      :Cultural_MuseumTour .
+
+
+###  http://www.ecotourism.org/ontology#Guide_MohamedBenAli
+:Guide_MohamedBenAli rdf:type owl:NamedIndividual ;
+                     :guidesActivity :Adventure_RockClimbing ,
+                                     :Adventure_SaharaTrek ;
+                     :operatedBy :Bike_EcoCity_01 .
+
+
+###  http://www.ecotourism.org/ontology#Hotel_GrandPalace
+:Hotel_GrandPalace rdf:type owl:NamedIndividual ,
+                            :Hotel ;
+                   :accommodationDescription "Luxury hotel with modern amenities and traditional Tunisian design" ;
+                   :accommodationId "HOTEL-001" ;
+                   :accommodationName "Grand Palace Hotel" ;
+                   :accommodationPhone "+216 71 567 890" ;
+                   :accommodationRating "4.4"^^xsd:float ;
+                   :checkInTime "15:00" ;
+                   :checkOutTime "12:00" ;
+                   :contactEmail "reservations@grandpalace.tn" ;
+                   :hasRestaurant "true"^^xsd:boolean ;
+                   :hasSpa "true"^^xsd:boolean ;
+                   :hasSwimmingPool "true"^^xsd:boolean ;
+                   :maxGuests 240 ;
+                   :numberOfRooms 120 ;
+                   :parkingAvailable "true"^^xsd:boolean ;
+                   :pricePerNight "350.0"^^xsd:float ;
+                   :roomService "true"^^xsd:boolean ;
+                   :starRating 5 ;
+                   :wifiAvailable "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#Hotel_SeaBreeze
+:Hotel_SeaBreeze rdf:type owl:NamedIndividual ,
+                          :Hotel ;
+                 :hasSustainabilityMetric :Carbon_Medium ;
+                 :locatedIn :City_Sousse ;
+                 :accommodationDescription "Beachfront hotel with panoramic sea views and eco-friendly practices" ;
+                 :accommodationId "HOTEL-002" ;
+                 :accommodationName "Sea Breeze Resort" ;
+                 :accommodationPhone "+216 73 567 890" ;
+                 :accommodationRating "4.3"^^xsd:float ;
+                 :checkInTime "14:00" ;
+                 :checkOutTime "11:00" ;
+                 :contactEmail "book@seabreeze.tn" ;
+                 :hasRestaurant "true"^^xsd:boolean ;
+                 :hasSpa "true"^^xsd:boolean ;
+                 :hasSwimmingPool "true"^^xsd:boolean ;
+                 :maxGuests 160 ;
+                 :numberOfRooms 80 ;
+                 :parkingAvailable "true"^^xsd:boolean ;
+                 :pricePerNight "280.0"^^xsd:float ;
+                 :roomService "true"^^xsd:boolean ;
+                 :starRating 4 ;
+                 :wifiAvailable "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#NaturalSite_DouggaRuins
+:NaturalSite_DouggaRuins rdf:type owl:NamedIndividual ,
+                                  :NaturalSite ;
+                         :address "Béja Governorate, Tunisia" ;
+                         :areaSizeHectares "75.0"^^xsd:float ;
+                         :biodiversityIndex "6.2"^^xsd:float ;
+                         :entryFee "8.0"^^xsd:float ;
+                         :latitude "36.4231"^^xsd:float ;
+                         :locationDescription "UNESCO World Heritage site with exceptionally well-preserved Roman ruins in natural setting" ;
+                         :locationId "NAT-002" ;
+                         :locationName "Dougga Archaeological Site" ;
+                         :longitude "9.2192"^^xsd:float ;
+                         :protectedStatus "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#NaturalSite_IchkeulPark
+:NaturalSite_IchkeulPark rdf:type owl:NamedIndividual ,
+                                  :NaturalSite ;
+                         :address "Bizerte Governorate, Tunisia" ;
+                         :areaSizeHectares "12600.0"^^xsd:float ;
+                         :biodiversityIndex "8.7"^^xsd:float ;
+                         :entryFee "10.0"^^xsd:float ;
+                         :latitude "37.1667"^^xsd:float ;
+                         :locationDescription "UNESCO World Heritage site with lake and wetlands important for migratory birds" ;
+                         :locationId "NAT-001" ;
+                         :locationName "Ichkeul National Park" ;
+                         :longitude "9.6667"^^xsd:float ;
+                         :protectedStatus "true"^^xsd:boolean .
+
+
+###  http://www.ecotourism.org/ontology#Nature_BirdWatching
+:Nature_BirdWatching rdf:type owl:NamedIndividual ,
+                              :NatureActivity ;
+                     :availableInSeason :Season_Spring ,
+                                        :Season_Winter ;
+                     :guidedBy :Guide_AhmedKhalil ;
+                     :takesPlaceIn :NaturalSite_IchkeulPark ;
+                     :activityDescription "Guided bird watching tour in protected wetlands during migration season" ;
+                     :activityId "NAT-001" ;
+                     :activityLanguages "English, French" ;
+                     :activityName "Migratory Bird Watching" ;
+                     :activityRating "4.6"^^xsd:float ;
+                     :bestTimeToVisit "October-April (Migration Season)" ;
+                     :binocularsProvided "true"^^xsd:boolean ;
+                     :difficultyLevel "Easy" ;
+                     :durationHours 4 ;
+                     :ecosystemType "Wetlands and Marshlands" ;
+                     :maxParticipants 10 ;
+                     :minAge 8 ;
+                     :pricePerPerson "60.0"^^xsd:float ;
+                     :schedule "Daily at sunrise and sunset" ;
+                     :wildlifeSpotting "Flamingos, herons, ducks, migratory birds" .
+
+
+###  http://www.ecotourism.org/ontology#Nature_CoastalKayak
+:Nature_CoastalKayak rdf:type owl:NamedIndividual ,
+                              :NatureActivity ;
+                     :activityDescription "Sea kayaking along pristine coastline exploring hidden coves and marine life" ;
+                     :activityId "NAT-003" ;
+                     :activityLanguages "English, French" ;
+                     :activityName "Coastal Kayaking Adventure" ;
+                     :activityRating "4.8"^^xsd:float ;
+                     :bestTimeToVisit "May-September" ;
+                     :binocularsProvided "false"^^xsd:boolean ;
+                     :difficultyLevel "Beginner" ;
+                     :durationHours 3 ;
+                     :ecosystemType "Coastal and Marine" ;
+                     :maxParticipants 6 ;
+                     :minAge 10 ;
+                     :pricePerPerson "75.0"^^xsd:float ;
+                     :schedule "Daily 10:00 AM and 3:00 PM (weather permitting)" ;
+                     :wildlifeSpotting "Dolphins, sea turtles, various fish species" .
+
+
+###  http://www.ecotourism.org/ontology#Nature_ForestHike
+:Nature_ForestHike rdf:type owl:NamedIndividual ,
+                            :NatureActivity ;
+                   :activityDescription "Educational hike through protected forest learning about local flora and fauna" ;
+                   :activityId "NAT-002" ;
+                   :activityLanguages "English, French" ;
+                   :activityName "Forest Ecology Hike" ;
+                   :activityRating "4.7"^^xsd:float ;
+                   :bestTimeToVisit "Spring and Autumn" ;
+                   :binocularsProvided "true"^^xsd:boolean ;
+                   :difficultyLevel "Moderate" ;
+                   :durationHours 5 ;
+                   :ecosystemType "Mediterranean Forest" ;
+                   :maxParticipants 8 ;
+                   :minAge 12 ;
+                   :pricePerPerson "55.0"^^xsd:float ;
+                   :schedule "Tuesday, Thursday, Saturday 9:00 AM - 2:00 PM" ;
+                   :wildlifeSpotting "Wild boar, deer, various bird species, reptiles" .
+
+
+###  http://www.ecotourism.org/ontology#PT_Bus_02
+:PT_Bus_02 rdf:type owl:NamedIndividual ,
+                    :PublicTransport ;
+           :accessibleForDisabled "true"^^xsd:boolean ;
+           :availability "true"^^xsd:boolean ;
+           :averageSpeed "40.0"^^xsd:float ;
+           :capacity 60 ;
+           :carbonEmissionPerKm "0.02"^^xsd:float ;
+           :contactPhone "+216 71 456 790" ;
+           :frequencyMinutes 15 ;
+           :lineNumber "20" ;
+           :operatingHours "Daily 6:00 AM - 11:00 PM" ;
+           :pricePerKm "0.15"^^xsd:float ;
+           :routeDescription "Airport to City Center via Tourist Zone" ;
+           :ticketPrice "1.5"^^xsd:float ;
+           :transportId "PT-002" ;
+           :transportName "Eco Bus Line 20" ;
+           :transportType "Electric Bus" .
+
+
+###  http://www.ecotourism.org/ontology#PT_Metro_01
+:PT_Metro_01 rdf:type owl:NamedIndividual ,
+                      :PublicTransport ;
+             :connectsLocation :City_Hammamet ,
+                               :City_Tunis ;
+             :hasImpact :Carbon_Low ;
+             :accessibleForDisabled "true"^^xsd:boolean ;
+             :availability "true"^^xsd:boolean ;
+             :averageSpeed "35.0"^^xsd:float ;
+             :capacity 300 ;
+             :carbonEmissionPerKm "0.05"^^xsd:float ;
+             :contactPhone "+216 71 456 789" ;
+             :frequencyMinutes 7 ;
+             :lineNumber "M1" ;
+             :operatingHours "Daily 5:30 AM - 12:00 AM" ;
+             :pricePerKm "0.1"^^xsd:float ;
+             :routeDescription "Sud-Tunis Nord via Centre Urbain" ;
+             :ticketPrice "0.8"^^xsd:float ;
+             :transportId "PT-001" ;
+             :transportName "Tunis Metro Line 1" ;
+             :transportType "Metro" .
+
+
+###  http://www.ecotourism.org/ontology#PT_Train_04
+:PT_Train_04 rdf:type owl:NamedIndividual ,
+                      :PublicTransport ;
+             :accessibleForDisabled "true"^^xsd:boolean ;
+             :availability "true"^^xsd:boolean ;
+             :averageSpeed "100.0"^^xsd:float ;
+             :capacity 400 ;
+             :carbonEmissionPerKm "0.04"^^xsd:float ;
+             :contactPhone "+216 71 567 892" ;
+             :frequencyMinutes 60 ;
+             :lineNumber "R1" ;
+             :operatingHours "Daily 5:00 AM - 11:00 PM" ;
+             :pricePerKm "0.08"^^xsd:float ;
+             :routeDescription "Tunis to Sousse Express" ;
+             :ticketPrice "8.0"^^xsd:float ;
+             :transportId "PT-004" ;
+             :transportName "National Rail Service" ;
+             :transportType "Train" .
+
+
+###  http://www.ecotourism.org/ontology#PT_Tram_03
+:PT_Tram_03 rdf:type owl:NamedIndividual ,
+                     :PublicTransport ;
+            :accessibleForDisabled "true"^^xsd:boolean ;
+            :availability "true"^^xsd:boolean ;
+            :averageSpeed "45.0"^^xsd:float ;
+            :capacity 200 ;
+            :carbonEmissionPerKm "0.03"^^xsd:float ;
+            :contactPhone "+216 73 456 791" ;
+            :frequencyMinutes 20 ;
+            :lineNumber "T1" ;
+            :operatingHours "Daily 6:30 AM - 10:30 PM" ;
+            :pricePerKm "0.12"^^xsd:float ;
+            :routeDescription "Sousse to Hammamet Coastal Route" ;
+            :ticketPrice "2.0"^^xsd:float ;
+            :transportId "PT-003" ;
+            :transportName "Coastal Tram Service" ;
+            :transportType "Tram" .
+
+
+###  http://www.ecotourism.org/ontology#Product_BerberCarpet
+:Product_BerberCarpet rdf:type owl:NamedIndividual ,
+                               :LocalProduct ;
+                      :producedIn :City_Tunis ;
+                      :purchasedBy :Tourist_BenjaminMartin ;
+                      :fairTradeCertified "true"^^xsd:boolean ;
+                      :isHandmade "true"^^xsd:boolean ;
+                      :isOrganic "false"^^xsd:boolean ;
+                      :producerName "Artisan Weaving Collective" ;
+                      :productCategory "Crafts and Textiles" ;
+                      :productDescription "Handwoven carpet with traditional Berber patterns and natural dyes" ;
+                      :productId "PRD-002" ;
+                      :productName "Traditional Berber Carpet" ;
+                      :productPrice "250.0"^^xsd:float ;
+                      :stockQuantity 45 .
+
+
+###  http://www.ecotourism.org/ontology#Product_DateBox
+:Product_DateBox rdf:type owl:NamedIndividual ,
+                          :LocalProduct ;
+                 :fairTradeCertified "true"^^xsd:boolean ;
+                 :isHandmade "false"^^xsd:boolean ;
+                 :isOrganic "true"^^xsd:boolean ;
+                 :producerName "Tozeur Date Farmers" ;
+                 :productCategory "Food and Beverages" ;
+                 :productDescription "Assortment of finest dates from Tozeur oasis" ;
+                 :productId "PRD-003" ;
+                 :productName "Premium Date Selection" ;
+                 :productPrice "28.0"^^xsd:float ;
+                 :stockQuantity 200 .
+
+
+###  http://www.ecotourism.org/ontology#Product_OliveOil
+:Product_OliveOil rdf:type owl:NamedIndividual ,
+                           :LocalProduct ;
+                  :producedIn :Region_Sahel ;
+                  :purchasedBy :Tourist_AliceJohnson ;
+                  :fairTradeCertified "true"^^xsd:boolean ;
+                  :isHandmade "true"^^xsd:boolean ;
+                  :isOrganic "true"^^xsd:boolean ;
+                  :producerName "Oasis Olive Cooperative" ;
+                  :productCategory "Food and Beverages" ;
+                  :productDescription "Cold-pressed extra virgin olive oil from century-old trees" ;
+                  :productId "PRD-001" ;
+                  :productName "Premium Organic Olive Oil" ;
+                  :productPrice "35.0"^^xsd:float ;
+                  :stockQuantity 150 .
+
+
+###  http://www.ecotourism.org/ontology#Product_PotterySet
+:Product_PotterySet rdf:type owl:NamedIndividual ,
+                             :LocalProduct ;
+                    :fairTradeCertified "true"^^xsd:boolean ;
+                    :isHandmade "true"^^xsd:boolean ;
+                    :isOrganic "false"^^xsd:boolean ;
+                    :producerName "Nabeul Pottery Artisans" ;
+                    :productCategory "Crafts and Textiles" ;
+                    :productDescription "Handcrafted ceramic set with traditional Tunisian patterns" ;
+                    :productId "PRD-004" ;
+                    :productName "Traditional Pottery Set" ;
+                    :productPrice "120.0"^^xsd:float ;
+                    :stockQuantity 30 .
+
+
+###  http://www.ecotourism.org/ontology#Region_CapBon
+:Region_CapBon rdf:type owl:NamedIndividual ,
+                        :Region ;
+               :address "Northeastern Tunisia" ;
+               :climateType "Mediterranean" ;
+               :latitude "36.75"^^xsd:float ;
+               :locationDescription "Scenic peninsula with citrus groves, fishing villages, and resort towns" ;
+               :locationId "REG-003" ;
+               :locationName "Cap Bon Peninsula" ;
+               :longitude "10.75"^^xsd:float ;
+               :mainAttractions "Hammamet beaches, Nabeul pottery, Kerkouane Punic town, Kelibia Fort" ;
+               :regionArea "1500.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#Region_Sahel
+:Region_Sahel rdf:type owl:NamedIndividual ,
+                       :Region ;
+              :address "Eastern Coastal Tunisia" ;
+              :climateType "Mediterranean" ;
+              :latitude "35.5"^^xsd:float ;
+              :locationDescription "Coastal region known for olive groves, beaches, and historic cities" ;
+              :locationId "REG-002" ;
+              :locationName "Sahel Region" ;
+              :longitude "10.5"^^xsd:float ;
+              :mainAttractions "Sousse Medina, Monastir Ribat, El Jem Amphitheater, Sahel beaches" ;
+              :regionArea "12642.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#Region_TunisRegion
+:Region_TunisRegion rdf:type owl:NamedIndividual ,
+                             :Region ;
+                    :containsLocation :City_Tunis ,
+                                      :NaturalSite_IchkeulPark ;
+                    :hasAccommodation :EcoLodge_GreenValley ;
+                    :hostsActivity :Adventure_SaharaTrek ;
+                    :address "Northern Tunisia" ;
+                    :climateType "Mediterranean" ;
+                    :latitude "36.8"^^xsd:float ;
+                    :locationDescription "Capital region including Tunis and surrounding coastal areas" ;
+                    :locationId "REG-001" ;
+                    :locationName "Tunis Region" ;
+                    :longitude "10.18"^^xsd:float ;
+                    :mainAttractions "Ancient Medina, Carthage ruins, Sidi Bou Said, Bardo Museum" ;
+                    :regionArea "3468.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#RenewableEnergy_Excellent
+:RenewableEnergy_Excellent rdf:type owl:NamedIndividual ,
+                                    :RenewableEnergyUsage ;
+                           :measuresImpactOf :EcoLodge_GreenValley ;
+                           :indicatorId "IND-R-001" ;
+                           :indicatorName "Excellent Renewable Energy Usage" ;
+                           :indicatorValue "95.0"^^xsd:float ;
+                           :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+                           :measurementUnit "Percentage" ;
+                           :targetValue "100.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#RenewableEnergy_Good
+:RenewableEnergy_Good rdf:type owl:NamedIndividual ,
+                               :RenewableEnergyUsage ;
+                      :indicatorId "IND-R-002" ;
+                      :indicatorName "Good Renewable Energy Usage" ;
+                      :indicatorValue "75.0"^^xsd:float ;
+                      :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+                      :measurementUnit "Percentage" ;
+                      :targetValue "80.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#Season_Autumn
+:Season_Autumn rdf:type owl:NamedIndividual ,
+                        :Season ;
+               :averageTemperature "22.0"^^xsd:float ;
+               :endDate "2025-11-30T23:59:59"^^xsd:dateTime ;
+               :peakTourismSeason "false"^^xsd:boolean ;
+               :seasonName "Autumn" ;
+               :startDate "2025-09-01T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.ecotourism.org/ontology#Season_Spring
+:Season_Spring rdf:type owl:NamedIndividual ,
+                        :Season ;
+               :favorableFor :Cultural_MedinaWalk ,
+                             :Nature_BirdWatching ;
+               :averageTemperature "20.0"^^xsd:float ;
+               :endDate "2025-05-31T23:59:59"^^xsd:dateTime ;
+               :peakTourismSeason "false"^^xsd:boolean ;
+               :seasonName "Spring" ;
+               :startDate "2025-03-01T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.ecotourism.org/ontology#Season_Summer
+:Season_Summer rdf:type owl:NamedIndividual ,
+                        :Season ;
+               :favorableFor :Adventure_Diving ,
+                             :Nature_CoastalKayak ;
+               :averageTemperature "28.0"^^xsd:float ;
+               :endDate "2025-08-31T23:59:59"^^xsd:dateTime ;
+               :peakTourismSeason "true"^^xsd:boolean ;
+               :seasonName "Summer" ;
+               :startDate "2025-06-01T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.ecotourism.org/ontology#Season_Winter
+:Season_Winter rdf:type owl:NamedIndividual ,
+                        :Season ;
+               :averageTemperature "12.0"^^xsd:float ;
+               :endDate "2025-02-28T23:59:59"^^xsd:dateTime ;
+               :peakTourismSeason "false"^^xsd:boolean ;
+               :seasonName "Winter" ;
+               :startDate "2025-12-01T00:00:00"^^xsd:dateTime .
+
+
+###  http://www.ecotourism.org/ontology#Tourist_AliceJohnson
+:Tourist_AliceJohnson rdf:type owl:NamedIndividual ;
+                      :bookedBy :Adventure_SaharaTrek ;
+                      :makesBooking :Booking_001 ;
+                      :purchasedBy :Product_OliveOil ;
+                      :usedByTourist :Bike_EcoCity_01 ;
+                      :writesReview :Feedback_001 .
+
+
+###  http://www.ecotourism.org/ontology#Tourist_BenjaminMartin
+:Tourist_BenjaminMartin rdf:type owl:NamedIndividual ;
+                        :bookedBy :Cultural_MuseumTour ;
+                        :makesBooking :Booking_002 ;
+                        :purchasedBy :Product_BerberCarpet ;
+                        :writesReview :Feedback_002 .
+
+
+###  http://www.ecotourism.org/ontology#Tourist_SarahMuller
+:Tourist_SarahMuller rdf:type owl:NamedIndividual .
+
+
+###  http://www.ecotourism.org/ontology#Water_Efficient
+:Water_Efficient rdf:type owl:NamedIndividual ,
+                          :WaterConsumption ;
+                 :indicatorId "IND-W-001" ;
+                 :indicatorName "Efficient Water Consumption" ;
+                 :indicatorValue "120.0"^^xsd:float ;
+                 :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+                 :measurementUnit "Liters per guest per day" ;
+                 :targetValue "100.0"^^xsd:float .
+
+
+###  http://www.ecotourism.org/ontology#Water_Moderate
+:Water_Moderate rdf:type owl:NamedIndividual ,
+                         :WaterConsumption ;
+                :indicatorId "IND-W-002" ;
+                :indicatorName "Moderate Water Consumption" ;
+                :indicatorValue "180.0"^^xsd:float ;
+                :measurementDate "2025-01-15T00:00:00"^^xsd:dateTime ;
+                :measurementUnit "Liters per guest per day" ;
+                :targetValue "160.0"^^xsd:float .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

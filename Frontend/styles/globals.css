@@ -1,0 +1,51 @@
+/* image popup */
+img.mfp-img {
+  box-shadow: 0 0 8px rgb(0 0 0 / 60%);
+  position: absolute;
+  max-height: 392px;
+  padding: 0 !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.mfp-img-container .mfp-content {
+  max-width: 400px !important;
+}
+.mfp-img-container .mfp-close {
+  top: -110px;
+  right: -24px;
+}
+
+input[type="date"] {
+  position: relative;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: transparent !important;
+  background: none !important;
+  z-index: 1;
+}
+input[type="date"].booing_datepicker::-webkit-calendar-picker-indicator {
+  color: transparent !important;
+  background: none !important;
+  z-index: 1;
+  position: absolute;
+  left: 10px;
+}
+
+input[type="date"].booing_datepicker::before {
+  left: 10px;
+  font-size: 16px;
+}
+
+input[type="date"]:before {
+  content: "\f073";
+  font-family: "Font Awesome 5 Pro";
+  font-size: 18px;
+  color: #63ab45;
+  background: none;
+  display: block;
+  position: absolute;
+  top: unset;
+  right: 19px;
+}

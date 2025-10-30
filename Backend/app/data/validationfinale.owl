@@ -1,0 +1,2316 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.ecotourism.org/ontology#"
+     xml:base="http://www.ecotourism.org/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    
+    <owl:Ontology rdf:about="http://www.ecotourism.org/ontology#EcoTourismOntology">
+        <rdfs:label xml:lang="en">Enhanced Ecotourism Tunisia Ontology</rdfs:label>
+        <rdfs:comment xml:lang="en">Comprehensive ontology for sustainable tourism management in Tunisia with extensive data</rdfs:comment>
+    </owl:Ontology>
+
+    <!-- =============================================== -->
+    <!-- OBJECT PROPERTIES -->
+    <!-- =============================================== -->
+
+    <!-- Transport Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#connectsLocation">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">connects location</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#operatedBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:label xml:lang="en">operated by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#hasImpact">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:label xml:lang="en">has environmental impact</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#usedByTourist">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:label xml:lang="en">used by tourist</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Activity Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#takesPlaceIn">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">takes place in</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#guidedBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:label xml:lang="en">guided by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#availableInSeason">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:label xml:lang="en">available in season</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#bookedBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:label xml:lang="en">booked by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#hasReview">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:label xml:lang="en">has review</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Accommodation Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#locatedIn">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">located in</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#receivesBooking">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:label xml:lang="en">receives booking</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#hasSustainabilityMetric">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:label xml:lang="en">has sustainability metric</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#reviewedBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:label xml:lang="en">reviewed by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Booking Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#madeBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:label xml:lang="en">made by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#concernsAccommodation">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">concerns accommodation</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#concernsActivity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">concerns activity</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Feedback Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#writtenBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:label xml:lang="en">written by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#reviewsAccommodation">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">reviews accommodation</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#reviewsActivity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">reviews activity</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Local Product Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#producedIn">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">produced in</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#purchasedBy">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:label xml:lang="en">purchased by</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Location Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#containsLocation">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">contains location</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#hostsActivity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">hosts activity</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#hasAccommodation">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">has accommodation</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Season Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#favorableFor">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">favorable for</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- Sustainability Indicator Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#measuresImpactOf">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">measures impact of</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- User Profile Object Properties -->
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#makesBooking">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:label xml:lang="en">makes booking</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#writesReview">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:label xml:lang="en">writes review</rdfs:label>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="http://www.ecotourism.org/ontology#guidesActivity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">guides activity</rdfs:label>
+    </owl:ObjectProperty>
+
+    <!-- =============================================== -->
+    <!-- DATA PROPERTIES -->
+    <!-- =============================================== -->
+
+    <!-- Transport Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#transportId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">transport ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#transportName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">transport name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#transportType">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">transport type</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#pricePerKm">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">price per km (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#carbonEmissionPerKm">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">carbon emission per km (kg CO2)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#capacity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">passenger capacity</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#availability">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">currently available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#operatingHours">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">operating hours</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#averageSpeed">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">average speed (km/h)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#contactPhone">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">contact phone</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Bike Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#bikeModel">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">bike model</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#isElectric">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is electric</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#batteryRange">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">battery range (km)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#rentalPricePerHour">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">rental price per hour (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#frameSize">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">frame size</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Electric Vehicle Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#vehicleModel">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">vehicle model</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#vehicleBatteryRange">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">battery range (km)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#chargingTime">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">charging time (hours)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#seatingCapacity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">seating capacity</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#dailyRentalPrice">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">daily rental price (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#hasAirConditioning">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">has air conditioning</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Public Transport Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#lineNumber">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">line number</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#routeDescription">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">route description</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#ticketPrice">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">ticket price (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#frequencyMinutes">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">frequency (minutes)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#accessibleForDisabled">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">accessible for disabled</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Activity Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#activityId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">activity ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#activityName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">activity name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#activityDescription">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#durationHours">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">duration (hours)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#pricePerPerson">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">price per person (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#difficultyLevel">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">difficulty level</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#maxParticipants">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">max participants</rdfs:label>
+    </owl:DatatypeProperty>
+
+   <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#minAge">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">minimum age</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#activityRating">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">average rating</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#schedule">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">schedule</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#activityLanguages">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">languages available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Adventure Activity Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#riskLevel">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">risk level (1-10)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#requiredEquipment">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">required equipment</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#physicalFitnessRequired">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">physical fitness required</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#safetyBriefingRequired">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">safety briefing required</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Cultural Activity Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#culturalTheme">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">cultural theme</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#historicalPeriod">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">historical period</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#audioGuideAvailable">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">audio guide available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#photographyAllowed">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">photography allowed</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Nature Activity Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#ecosystemType">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">ecosystem type</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#wildlifeSpotting">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">wildlife spotting opportunities</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#bestTimeToVisit">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">best time to visit</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#binocularsProvided">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">binoculars provided</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Accommodation Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#accommodationId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">accommodation ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#accommodationName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">accommodation name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#accommodationDescription">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#pricePerNight">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">price per night (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#numberOfRooms">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">number of rooms</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#maxGuests">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">max guests</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#checkInTime">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">check-in time</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#checkOutTime">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">check-out time</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#wifiAvailable">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">WiFi available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#parkingAvailable">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">parking available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#accommodationRating">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">average rating</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#contactEmail">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">contact email</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#accommodationPhone">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">phone number</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Eco Lodge Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#ecoCertified">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">eco certified</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#renewableEnergyPercent">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">renewable energy percentage</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#wasteRecyclingRate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">waste recycling rate (%)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#organicFoodOffered">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">organic food offered</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#waterConservationSystem">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">water conservation system</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Guest House Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#familyOwned">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#GuestHouse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">family owned</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#traditionalArchitecture">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#GuestHouse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">traditional architecture</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#homeCookedMeals">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#GuestHouse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">home cooked meals</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#culturalExperiences">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#GuestHouse"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">cultural experiences offered</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Hotel Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#starRating">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">star rating</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#hasSwimmingPool">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">has swimming pool</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#hasSpa">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">has spa</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#hasRestaurant">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">has restaurant</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#roomService">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">room service available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Booking Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#bookingId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">booking ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#bookingDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">booking date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#checkInDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">check-in date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#checkOutDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">check-out date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#numberOfGuests">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">number of guests</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#totalPrice">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">total price (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#bookingStatus">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">booking status</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#confirmationCode">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">confirmation code</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#specialRequests">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">special requests</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#paymentMethod">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Booking"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">payment method</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Feedback Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#feedbackId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">feedback ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#rating">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">rating (1-5)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#comment">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">comment</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#reviewDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">review date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#verifiedPurchase">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">verified purchase</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#helpfulVotes">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">helpful votes</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#wouldRecommend">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">would recommend</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#ownerResponse">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Feedback"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">owner response</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Local Product Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#productId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">product ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#productName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">product name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#productDescription">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#productPrice">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">price (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#productCategory">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">category</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#isOrganic">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is organic</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#isHandmade">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is handmade</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#producerName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">producer name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#stockQuantity">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">stock quantity</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#fairTradeCertified">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">fair trade certified</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Location Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#locationId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">location ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#locationName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">location name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#latitude">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">latitude</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#longitude">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">longitude</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#address">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">address</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#locationDescription">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">description</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- City Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#population">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">population</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#postalCode">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">postal code</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#touristAttractions">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#City"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">tourist attractions</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Natural Site Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#protectedStatus">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NaturalSite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">protected status</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#biodiversityIndex">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NaturalSite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">biodiversity index</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#areaSizeHectares">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NaturalSite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">area size (hectares)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#entryFee">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#NaturalSite"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">entry fee (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Region Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#climateType">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Region"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">climate type</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#regionArea">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Region"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">region area (km²)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#mainAttractions">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Region"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">main attractions</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Season Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#seasonName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">season name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#startDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">start date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#endDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">end date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#averageTemperature">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">average temperature (°C)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#peakTourismSeason">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">peak tourism season</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Sustainability Indicator Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#indicatorId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">indicator ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#indicatorName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">indicator name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#indicatorValue">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">indicator value</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#measurementUnit">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">measurement unit</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#measurementDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">measurement date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#targetValue">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">target value</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- User Profile Data Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#userId">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">user ID</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#userName">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">user name</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#userEmail">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">email</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#userPhone">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">phone number</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#registrationDate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">registration date</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Tourist Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#nationality">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">nationality</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#passportNumber">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">passport number</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#travelBudget">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">travel budget (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#preferences">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">travel preferences</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#age">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Tourist"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">age</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- Guide Specific Properties -->
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#guideLicenseNumber">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">license number</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#spokenLanguages">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">spoken languages</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#yearsOfExperience">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:label xml:lang="en">years of experience</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#specialization">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">specialization</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#hourlyRate">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">hourly rate (TND)</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#guideRating">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">average rating</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="http://www.ecotourism.org/ontology#isAvailable">
+        <rdfs:domain rdf:resource="http://www.ecotourism.org/ontology#Guide"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">currently available</rdfs:label>
+    </owl:DatatypeProperty>
+
+    <!-- =============================================== -->
+    <!-- CLASSES -->
+    <!-- =============================================== -->
+
+    <!-- Transport Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Transport">
+        <rdfs:label xml:lang="en">Transport</rdfs:label>
+        <rdfs:comment xml:lang="en">Base class for all transport options</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Bike">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:label xml:lang="en">Bike</rdfs:label>
+        <rdfs:comment xml:lang="en">Bicycle transport option</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#ElectricVehicle">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:label xml:lang="en">Electric Vehicle</rdfs:label>
+        <rdfs:comment xml:lang="en">Electric vehicle transport</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#PublicTransport">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Transport"/>
+        <rdfs:label xml:lang="en">Public Transport</rdfs:label>
+        <rdfs:comment xml:lang="en">Public transportation system</rdfs:comment>
+    </owl:Class>
+
+    <!-- Activity Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Activity">
+        <rdfs:label xml:lang="en">Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Tourism activity or experience</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#AdventureActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">Adventure Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Adventure-based tourism activity</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#CulturalActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">Cultural Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Cultural tourism activity</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#NatureActivity">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Activity"/>
+        <rdfs:label xml:lang="en">Nature Activity</rdfs:label>
+        <rdfs:comment xml:lang="en">Nature-based tourism activity</rdfs:comment>
+    </owl:Class>
+
+    <!-- Accommodation Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Accommodation">
+        <rdfs:label xml:lang="en">Accommodation</rdfs:label>
+        <rdfs:comment xml:lang="en">Place to stay for tourists</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#EcoLodge">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">Eco Lodge</rdfs:label>
+        <rdfs:comment xml:lang="en">Environmentally sustainable accommodation</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#GuestHouse">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">Guest House</rdfs:label>
+        <rdfs:comment xml:lang="en">Family-run guest house accommodation</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Hotel">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Accommodation"/>
+        <rdfs:label xml:lang="en">Hotel</rdfs:label>
+        <rdfs:comment xml:lang="en">Traditional hotel accommodation</rdfs:comment>
+    </owl:Class>
+
+    <!-- Other Main Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Booking">
+        <rdfs:label xml:lang="en">Booking</rdfs:label>
+        <rdfs:comment xml:lang="en">Reservation for tourism services</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Feedback">
+        <rdfs:label xml:lang="en">Feedback</rdfs:label>
+        <rdfs:comment xml:lang="en">User reviews and ratings</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#LocalProduct">
+        <rdfs:label xml:lang="en">Local Product</rdfs:label>
+        <rdfs:comment xml:lang="en">Locally produced item</rdfs:comment>
+    </owl:Class>
+
+    <!-- Location Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Location">
+        <rdfs:label xml:lang="en">Location</rdfs:label>
+        <rdfs:comment xml:lang="en">Geographic location</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#City">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">City</rdfs:label>
+        <rdfs:comment xml:lang="en">Urban location</rdfs:comment>
+    </owl:Class>
+
+      <owl:Class rdf:about="http://www.ecotourism.org/ontology#NaturalSite">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">Natural Site</rdfs:label>
+        <rdfs:comment xml:lang="en">Natural tourism site</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Region">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#Location"/>
+        <rdfs:label xml:lang="en">Region</rdfs:label>
+        <rdfs:comment xml:lang="en">Geographic region</rdfs:comment>
+    </owl:Class>
+
+    <!-- Season Class -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Season">
+        <rdfs:label xml:lang="en">Season</rdfs:label>
+        <rdfs:comment xml:lang="en">Tourism season</rdfs:comment>
+    </owl:Class>
+
+    <!-- Sustainability Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#SustainabilityIndicator">
+        <rdfs:label xml:lang="en">Sustainability Indicator</rdfs:label>
+        <rdfs:comment xml:lang="en">Environmental sustainability metric</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#CarbonFootprint">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:label xml:lang="en">Carbon Footprint</rdfs:label>
+        <rdfs:comment xml:lang="en">Carbon emission measurement</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#RenewableEnergyUsage">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:label xml:lang="en">Renewable Energy Usage</rdfs:label>
+        <rdfs:comment xml:lang="en">Renewable energy consumption metric</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#WaterConsumption">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#SustainabilityIndicator"/>
+        <rdfs:label xml:lang="en">Water Consumption</rdfs:label>
+        <rdfs:comment xml:lang="en">Water usage measurement</rdfs:comment>
+    </owl:Class>
+
+    <!-- User Profile Classes -->
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#UserProfile">
+        <rdfs:label xml:lang="en">User Profile</rdfs:label>
+        <rdfs:comment xml:lang="en">Base class for all user profiles</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Guide">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:label xml:lang="en">Guide</rdfs:label>
+        <rdfs:comment xml:lang="en">Professional tourism guide</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="http://www.ecotourism.org/ontology#Tourist">
+        <rdfs:subClassOf rdf:resource="http://www.ecotourism.org/ontology#UserProfile"/>
+        <rdfs:label xml:lang="en">Tourist</rdfs:label>
+        <rdfs:comment xml:lang="en">Visitor exploring ecotourism destinations</rdfs:comment>
+    </owl:Class>
+
+    <!-- =============================================== -->
+    <!-- INDIVIDUALS (INSTANCES) -->
+    <!-- =============================================== -->
+
+    <!-- ========== TRANSPORT INSTANCES ========== -->
+    
+    <!-- Bikes -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Bike_EcoCity_01">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <transportId>BIKE-001</transportId>
+        <transportName>EcoCity Electric Bike</transportName>
+        <transportType>Electric Bike</transportType>
+        <bikeModel>E-Cruiser 3000</bikeModel>
+        <isElectric rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isElectric>
+        <batteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.0</batteryRange>
+        <rentalPricePerHour rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</rentalPricePerHour>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <operatingHours>Daily 7:00 AM - 8:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">25.0</averageSpeed>
+        <frameSize>Medium (54cm)</frameSize>
+        <contactPhone>+216 71 234 567</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Bike_Mountain_02">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <transportId>BIKE-002</transportId>
+        <transportName>Mountain Explorer Bike</transportName>
+        <transportType>Mountain Bike</transportType>
+        <bikeModel>TrailBlazer X5</bikeModel>
+        <isElectric rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isElectric>
+        <batteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</batteryRange>
+        <rentalPricePerHour rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</rentalPricePerHour>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <operatingHours>Daily 6:00 AM - 7:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">18.0</averageSpeed>
+        <frameSize>Large (58cm)</frameSize>
+        <contactPhone>+216 71 234 568</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Bike_City_03">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <transportId>BIKE-003</transportId>
+        <transportName>City Cruiser Bike</transportName>
+        <transportType>City Bike</transportType>
+        <bikeModel>UrbanRider 200</bikeModel>
+        <isElectric rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isElectric>
+        <batteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</batteryRange>
+        <rentalPricePerHour rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.0</rentalPricePerHour>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <operatingHours>Daily 7:00 AM - 9:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</averageSpeed>
+        <frameSize>Small (50cm)</frameSize>
+        <contactPhone>+216 71 234 569</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Bike_ElectricTour_04">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <transportId>BIKE-004</transportId>
+        <transportName>Tourist Electric Bike</transportName>
+        <transportType>Electric Touring Bike</transportType>
+        <bikeModel>TourMaster E500</bikeModel>
+        <isElectric rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isElectric>
+        <batteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</batteryRange>
+        <rentalPricePerHour rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</rentalPricePerHour>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <operatingHours>Daily 8:00 AM - 6:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">28.0</averageSpeed>
+        <frameSize>Medium (54cm)</frameSize>
+        <contactPhone>+216 71 234 570</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Bike_Tandem_05">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Bike"/>
+        <transportId>BIKE-005</transportId>
+        <transportName>Tandem Adventure Bike</transportName>
+        <transportType>Tandem Bike</transportType>
+        <bikeModel>DuoRider Classic</bikeModel>
+        <isElectric rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isElectric>
+        <batteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</batteryRange>
+        <rentalPricePerHour rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.0</rentalPricePerHour>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <operatingHours>Daily 8:00 AM - 7:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22.0</averageSpeed>
+        <frameSize>Standard</frameSize>
+        <contactPhone>+216 71 234 571</contactPhone>
+    </owl:NamedIndividual>
+
+    <!-- Electric Vehicles -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EV_Tesla_01">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <transportId>EV-001</transportId>
+        <transportName>Premium Electric Sedan</transportName>
+        <transportType>Electric Car</transportType>
+        <vehicleModel>Tesla Model 3</vehicleModel>
+        <vehicleBatteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">450.0</vehicleBatteryRange>
+        <chargingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</chargingTime>
+        <seatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</seatingCapacity>
+        <dailyRentalPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</dailyRentalPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.5</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <hasAirConditioning rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAirConditioning>
+        <operatingHours>24/7 with advance booking</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">90.0</averageSpeed>
+        <contactPhone>+216 71 345 678</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EV_Nissan_02">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <transportId>EV-002</transportId>
+        <transportName>Family Electric SUV</transportName>
+        <transportType>Electric SUV</transportType>
+        <vehicleModel>Nissan Ariya</vehicleModel>
+        <vehicleBatteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">400.0</vehicleBatteryRange>
+        <chargingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</chargingTime>
+        <seatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</seatingCapacity>
+        <dailyRentalPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">200.0</dailyRentalPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.6</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <hasAirConditioning rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAirConditioning>
+        <operatingHours>24/7 with advance booking</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</averageSpeed>
+        <contactPhone>+216 71 345 679</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EV_Renault_03">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <transportId>EV-003</transportId>
+        <transportName>Compact Electric City Car</transportName>
+        <transportType>Electric Compact</transportType>
+        <vehicleModel>Renault Zoe</vehicleModel>
+        <vehicleBatteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">320.0</vehicleBatteryRange>
+        <chargingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</chargingTime>
+        <seatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</seatingCapacity>
+        <dailyRentalPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</dailyRentalPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.4</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <hasAirConditioning rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAirConditioning>
+        <operatingHours>Daily 6:00 AM - 10:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</averageSpeed>
+        <contactPhone>+216 71 345 680</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EV_Van_04">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#ElectricVehicle"/>
+        <transportId>EV-004</transportId>
+        <transportName>Electric Tour Van</transportName>
+        <transportType>Electric Minivan</transportType>
+        <vehicleModel>Mercedes eVito</vehicleModel>
+        <vehicleBatteryRange rdf:datatype="http://www.w3.org/2001/XMLSchema#float">350.0</vehicleBatteryRange>
+        <chargingTime rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9</chargingTime>
+        <seatingCapacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</seatingCapacity>
+        <dailyRentalPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">250.0</dailyRentalPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.7</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <hasAirConditioning rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasAirConditioning>
+        <operatingHours>24/7 with advance booking</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75.0</averageSpeed>
+        <contactPhone>+216 71 345 681</contactPhone>
+    </owl:NamedIndividual>
+
+    <!-- Public Transport -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#PT_Metro_01">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <transportId>PT-001</transportId>
+        <transportName>Tunis Metro Line 1</transportName>
+        <transportType>Metro</transportType>
+        <lineNumber>M1</lineNumber>
+        <routeDescription>Sud-Tunis Nord via Centre Urbain</routeDescription>
+        <ticketPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8</ticketPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.1</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.05</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <frequencyMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</frequencyMinutes>
+        <accessibleForDisabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</accessibleForDisabled>
+        <operatingHours>Daily 5:30 AM - 12:00 AM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35.0</averageSpeed>
+        <contactPhone>+216 71 456 789</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#PT_Bus_02">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <transportId>PT-002</transportId>
+        <transportName>Eco Bus Line 20</transportName>
+        <transportType>Electric Bus</transportType>
+        <lineNumber>20</lineNumber>
+        <routeDescription>Airport to City Center via Tourist Zone</routeDescription>
+        <ticketPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1.5</ticketPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.15</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.02</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <frequencyMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</frequencyMinutes>
+        <accessibleForDisabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</accessibleForDisabled>
+        <operatingHours>Daily 6:00 AM - 11:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">40.0</averageSpeed>
+        <contactPhone>+216 71 456 790</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#PT_Tram_03">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <transportId>PT-003</transportId>
+        <transportName>Coastal Tram Service</transportName>
+        <transportType>Tram</transportType>
+        <lineNumber>T1</lineNumber>
+        <routeDescription>Sousse to Hammamet Coastal Route</routeDescription>
+        <ticketPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</ticketPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.12</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.03</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <frequencyMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</frequencyMinutes>
+        <accessibleForDisabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</accessibleForDisabled>
+        <operatingHours>Daily 6:30 AM - 10:30 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</averageSpeed>
+        <contactPhone>+216 73 456 791</contactPhone>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#PT_Train_04">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#PublicTransport"/>
+        <transportId>PT-004</transportId>
+        <transportName>National Rail Service</transportName>
+        <transportType>Train</transportType>
+        <lineNumber>R1</lineNumber>
+        <routeDescription>Tunis to Sousse Express</routeDescription>
+        <ticketPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</ticketPrice>
+        <pricePerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.08</pricePerKm>
+        <carbonEmissionPerKm rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.04</carbonEmissionPerKm>
+        <capacity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</capacity>
+        <availability rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</availability>
+        <frequencyMinutes rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</frequencyMinutes>
+        <accessibleForDisabled rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</accessibleForDisabled>
+        <operatingHours>Daily 5:00 AM - 11:00 PM</operatingHours>
+        <averageSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</averageSpeed>
+        <contactPhone>+216 71 567 892</contactPhone>
+    </owl:NamedIndividual>
+
+        <!-- ========== LOCAL PRODUCT INSTANCES (complétées) ========== -->
+    
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Product_OliveOil">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <productId>PRD-001</productId>
+        <productName>Premium Organic Olive Oil</productName>
+        <productDescription>Cold-pressed extra virgin olive oil from century-old trees</productDescription>
+        <productPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35.0</productPrice>
+        <productCategory>Food and Beverages</productCategory>
+        <isOrganic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganic>
+        <isHandmade rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isHandmade>
+        <producerName>Oasis Olive Cooperative</producerName>
+        <stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">150</stockQuantity>
+        <fairTradeCertified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fairTradeCertified>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Product_BerberCarpet">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <productId>PRD-002</productId>
+        <productName>Traditional Berber Carpet</productName>
+        <productDescription>Handwoven carpet with traditional Berber patterns and natural dyes</productDescription>
+        <productPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">250.0</productPrice>
+        <productCategory>Crafts and Textiles</productCategory>
+        <isOrganic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganic>
+        <isHandmade rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isHandmade>
+        <producerName>Artisan Weaving Collective</producerName>
+        <stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">45</stockQuantity>
+        <fairTradeCertified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fairTradeCertified>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Product_DateBox">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <productId>PRD-003</productId>
+        <productName>Premium Date Selection</productName>
+        <productDescription>Assortment of finest dates from Tozeur oasis</productDescription>
+        <productPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">28.0</productPrice>
+        <productCategory>Food and Beverages</productCategory>
+        <isOrganic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isOrganic>
+        <isHandmade rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isHandmade>
+        <producerName>Tozeur Date Farmers</producerName>
+        <stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">200</stockQuantity>
+        <fairTradeCertified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fairTradeCertified>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Product_PotterySet">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#LocalProduct"/>
+        <productId>PRD-004</productId>
+        <productName>Traditional Pottery Set</productName>
+        <productDescription>Handcrafted ceramic set with traditional Tunisian patterns</productDescription>
+        <productPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</productPrice>
+        <productCategory>Crafts and Textiles</productCategory>
+        <isOrganic rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</isOrganic>
+        <isHandmade rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</isHandmade>
+        <producerName>Nabeul Pottery Artisans</producerName>
+        <stockQuantity rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">30</stockQuantity>
+        <fairTradeCertified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</fairTradeCertified>
+    </owl:NamedIndividual>
+
+    <!-- ========== SUSTAINABILITY INDICATOR INSTANCES (complétées) ========== -->
+    
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Carbon_Medium">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#CarbonFootprint"/>
+        <indicatorId>IND-C-003</indicatorId>
+        <indicatorName>Medium Carbon Footprint</indicatorName>
+        <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.5</indicatorValue>
+        <measurementUnit>kg CO2 per guest per night</measurementUnit>
+        <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+        <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">7.5</targetValue>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#RenewableEnergy_Good">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#RenewableEnergyUsage"/>
+        <indicatorId>IND-R-002</indicatorId>
+        <indicatorName>Good Renewable Energy Usage</indicatorName>
+        <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75.0</indicatorValue>
+        <measurementUnit>Percentage</measurementUnit>
+        <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+        <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</targetValue>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Water_Moderate">
+        <rdf:type rdf:resource="http://www.ecotourism.org/ontology#WaterConsumption"/>
+        <indicatorId>IND-W-002</indicatorId>
+        <indicatorName>Moderate Water Consumption</indicatorName>
+        <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</indicatorValue>
+        <measurementUnit>Liters per guest per day</measurementUnit>
+        <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+        <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">160.0</targetValue>
+    </owl:NamedIndividual>
+
+   <!-- Indicateurs de durabilité manquants -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Carbon_VeryLow">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#CarbonFootprint"/>
+    <indicatorId>IND-C-001</indicatorId>
+    <indicatorName>Very Low Carbon Footprint</indicatorName>
+    <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.5</indicatorValue>
+    <measurementUnit>kg CO2 per guest per night</measurementUnit>
+    <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+    <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">2.0</targetValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Carbon_Low">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#CarbonFootprint"/>
+    <indicatorId>IND-C-002</indicatorId>
+    <indicatorName>Low Carbon Footprint</indicatorName>
+    <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">5.0</indicatorValue>
+    <measurementUnit>kg CO2 per guest per night</measurementUnit>
+    <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+    <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</targetValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#RenewableEnergy_Excellent">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#RenewableEnergyUsage"/>
+    <indicatorId>IND-R-001</indicatorId>
+    <indicatorName>Excellent Renewable Energy Usage</indicatorName>
+    <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.0</indicatorValue>
+    <measurementUnit>Percentage</measurementUnit>
+    <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+    <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</targetValue>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Water_Efficient">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#WaterConsumption"/>
+    <indicatorId>IND-W-001</indicatorId>
+    <indicatorName>Efficient Water Consumption</indicatorName>
+    <indicatorValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</indicatorValue>
+    <measurementUnit>Liters per guest per day</measurementUnit>
+    <measurementDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-01-15T00:00:00</measurementDate>
+    <targetValue rdf:datatype="http://www.w3.org/2001/XMLSchema#float">100.0</targetValue>
+</owl:NamedIndividual>
+
+    <!-- ========== ACCOMMODATION INSTANCES ========== -->
+
+<!-- Eco Lodge Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EcoLodge_GreenValley">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+    <accommodationId>ECO-001</accommodationId>
+    <accommodationName>Green Valley Eco Lodge</accommodationName>
+    <accommodationDescription>Sustainable lodge nestled in a protected valley with organic farming</accommodationDescription>
+    <pricePerNight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</pricePerNight>
+    <numberOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</numberOfRooms>
+    <maxGuests rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">24</maxGuests>
+    <checkInTime>14:00</checkInTime>
+    <checkOutTime>11:00</checkOutTime>
+    <wifiAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</wifiAvailable>
+    <parkingAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parkingAvailable>
+    <accommodationRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</accommodationRating>
+    <contactEmail>info@greenvalley.tn</contactEmail>
+    <accommodationPhone>+216 71 123 456</accommodationPhone>
+    <ecoCertified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ecoCertified>
+    <renewableEnergyPercent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</renewableEnergyPercent>
+    <wasteRecyclingRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">90.0</wasteRecyclingRate>
+    <organicFoodOffered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</organicFoodOffered>
+    <waterConservationSystem rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</waterConservationSystem>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EcoLodge_DesertOasis">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#EcoLodge"/>
+    <accommodationId>ECO-002</accommodationId>
+    <accommodationName>Desert Oasis Eco Lodge</accommodationName>
+    <accommodationDescription>Traditional desert accommodation with modern sustainable features</accommodationDescription>
+    <pricePerNight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">220.0</pricePerNight>
+    <numberOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</numberOfRooms>
+    <maxGuests rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</maxGuests>
+    <checkInTime>15:00</checkInTime>
+    <checkOutTime>12:00</checkOutTime>
+    <wifiAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</wifiAvailable>
+    <parkingAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parkingAvailable>
+    <accommodationRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.8</accommodationRating>
+    <contactEmail>stay@desertoasis.tn</contactEmail>
+    <accommodationPhone>+216 75 234 567</accommodationPhone>
+    <ecoCertified rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</ecoCertified>
+    <renewableEnergyPercent rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.0</renewableEnergyPercent>
+    <wasteRecyclingRate rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</wasteRecyclingRate>
+    <organicFoodOffered rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</organicFoodOffered>
+    <waterConservationSystem rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</waterConservationSystem>
+</owl:NamedIndividual>
+
+<!-- Guest House Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#GuestHouse_MedinaHeart">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#GuestHouse"/>
+    <accommodationId>GUEST-001</accommodationId>
+    <accommodationName>Medina Heart Guest House</accommodationName>
+    <accommodationDescription>Traditional family-run guest house in the heart of the medina</accommodationDescription>
+    <pricePerNight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">80.0</pricePerNight>
+    <numberOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</numberOfRooms>
+    <maxGuests rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</maxGuests>
+    <checkInTime>13:00</checkInTime>
+    <checkOutTime>11:00</checkOutTime>
+    <wifiAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</wifiAvailable>
+    <parkingAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</parkingAvailable>
+    <accommodationRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</accommodationRating>
+    <contactEmail>hello@medinaheart.tn</contactEmail>
+    <accommodationPhone>+216 71 345 678</accommodationPhone>
+    <familyOwned rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</familyOwned>
+    <traditionalArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</traditionalArchitecture>
+    <homeCookedMeals rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</homeCookedMeals>
+    <culturalExperiences>Cooking classes, traditional music nights, guided medina tours</culturalExperiences>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#GuestHouse_CoastalRetreat">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#GuestHouse"/>
+    <accommodationId>GUEST-002</accommodationId>
+    <accommodationName>Coastal Retreat Guest House</accommodationName>
+    <accommodationDescription>Seaside family guest house with authentic Tunisian hospitality</accommodationDescription>
+    <pricePerNight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">95.0</pricePerNight>
+    <numberOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</numberOfRooms>
+    <maxGuests rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</maxGuests>
+    <checkInTime>14:00</checkInTime>
+    <checkOutTime>11:00</checkOutTime>
+    <wifiAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</wifiAvailable>
+    <parkingAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parkingAvailable>
+    <accommodationRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</accommodationRating>
+    <contactEmail>info@coastalretreat.tn</contactEmail>
+    <accommodationPhone>+216 73 456 789</accommodationPhone>
+    <familyOwned rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</familyOwned>
+    <traditionalArchitecture rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</traditionalArchitecture>
+    <homeCookedMeals rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</homeCookedMeals>
+    <culturalExperiences>Fishing trips, seafood cooking classes, beach bonfires</culturalExperiences>
+</owl:NamedIndividual>
+
+<!-- Hotel Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Hotel_GrandPalace">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+    <accommodationId>HOTEL-001</accommodationId>
+    <accommodationName>Grand Palace Hotel</accommodationName>
+    <accommodationDescription>Luxury hotel with modern amenities and traditional Tunisian design</accommodationDescription>
+    <pricePerNight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">350.0</pricePerNight>
+    <numberOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</numberOfRooms>
+    <maxGuests rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">240</maxGuests>
+    <checkInTime>15:00</checkInTime>
+    <checkOutTime>12:00</checkOutTime>
+    <wifiAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</wifiAvailable>
+    <parkingAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parkingAvailable>
+    <accommodationRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.4</accommodationRating>
+    <contactEmail>reservations@grandpalace.tn</contactEmail>
+    <accommodationPhone>+216 71 567 890</accommodationPhone>
+    <starRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</starRating>
+    <hasSwimmingPool rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasSwimmingPool>
+    <hasSpa rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasSpa>
+    <hasRestaurant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRestaurant>
+    <roomService rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</roomService>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Hotel_SeaBreeze">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Hotel"/>
+    <accommodationId>HOTEL-002</accommodationId>
+    <accommodationName>Sea Breeze Resort</accommodationName>
+    <accommodationDescription>Beachfront hotel with panoramic sea views and eco-friendly practices</accommodationDescription>
+    <pricePerNight rdf:datatype="http://www.w3.org/2001/XMLSchema#float">280.0</pricePerNight>
+    <numberOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">80</numberOfRooms>
+    <maxGuests rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">160</maxGuests>
+    <checkInTime>14:00</checkInTime>
+    <checkOutTime>11:00</checkOutTime>
+    <wifiAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</wifiAvailable>
+    <parkingAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</parkingAvailable>
+    <accommodationRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.3</accommodationRating>
+    <contactEmail>book@seabreeze.tn</contactEmail>
+    <accommodationPhone>+216 73 567 890</accommodationPhone>
+    <starRating rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</starRating>
+    <hasSwimmingPool rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasSwimmingPool>
+    <hasSpa rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasSpa>
+    <hasRestaurant rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</hasRestaurant>
+    <roomService rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</roomService>
+</owl:NamedIndividual>
+
+<!-- ========== ACTIVITY INSTANCES ========== -->
+
+<!-- Adventure Activity Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Adventure_SaharaTrek">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+    <activityId>ADV-001</activityId>
+    <activityName>Sahara Desert Trek</activityName>
+    <activityDescription>Multi-day trek through the Sahara desert with overnight camping under the stars</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">450.0</pricePerPerson>
+    <difficultyLevel>Moderate</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">16</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.8</activityRating>
+    <schedule>Weekly departures every Saturday</schedule>
+    <activityLanguages>English, French, Arabic</activityLanguages>
+    <riskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</riskLevel>
+    <requiredEquipment>Hiking boots, backpack, sleeping bag, water containers</requiredEquipment>
+    <physicalFitnessRequired>Good physical condition required</physicalFitnessRequired>
+    <safetyBriefingRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</safetyBriefingRequired>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Adventure_RockClimbing">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+    <activityId>ADV-002</activityId>
+    <activityName>Mountain Rock Climbing</activityName>
+    <activityDescription>Guided rock climbing experience in the Atlas Mountains with professional equipment</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">120.0</pricePerPerson>
+    <difficultyLevel>Intermediate</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">14</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</activityRating>
+    <schedule>Daily 8:00 AM - 2:00 PM</schedule>
+    <activityLanguages>English, French</activityLanguages>
+    <riskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</riskLevel>
+    <requiredEquipment>Climbing shoes, helmet, harness (provided)</requiredEquipment>
+    <physicalFitnessRequired>Moderate fitness level</physicalFitnessRequired>
+    <safetyBriefingRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</safetyBriefingRequired>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Adventure_Diving">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#AdventureActivity"/>
+    <activityId>ADV-003</activityId>
+    <activityName>Mediterranean Scuba Diving</activityName>
+    <activityDescription>Scuba diving exploration of Mediterranean marine life and underwater caves</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">180.0</pricePerPerson>
+    <difficultyLevel>Beginner-Intermediate</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.9</activityRating>
+    <schedule>Daily 9:00 AM and 2:00 PM sessions</schedule>
+    <activityLanguages>English, French, Italian</activityLanguages>
+    <riskLevel rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</riskLevel>
+    <requiredEquipment>Diving certification, swimsuit, towel (equipment provided)</requiredEquipment>
+    <physicalFitnessRequired>Basic swimming skills</physicalFitnessRequired>
+    <safetyBriefingRequired rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</safetyBriefingRequired>
+</owl:NamedIndividual>
+
+<!-- Cultural Activity Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Cultural_MedinaWalk">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+    <activityId>CULT-001</activityId>
+    <activityName>Historic Medina Walking Tour</activityName>
+    <activityDescription>Guided tour through the ancient medina exploring traditional architecture and local markets</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">45.0</pricePerPerson>
+    <difficultyLevel>Easy</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</activityRating>
+    <schedule>Daily 10:00 AM and 4:00 PM</schedule>
+    <activityLanguages>English, French, Arabic, Spanish</activityLanguages>
+    <culturalTheme>Islamic Architecture and Traditional Crafts</culturalTheme>
+    <historicalPeriod>8th-19th Century</historicalPeriod>
+    <audioGuideAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</audioGuideAvailable>
+    <photographyAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</photographyAllowed>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Cultural_MuseumTour">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+    <activityId>CULT-002</activityId>
+    <activityName>National Museum Artifacts Tour</activityName>
+    <activityDescription>Expert-guided tour of ancient Roman and Carthaginian artifacts</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35.0</pricePerPerson>
+    <difficultyLevel>Easy</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.5</activityRating>
+    <schedule>Tuesday-Sunday 11:00 AM and 3:00 PM</schedule>
+    <activityLanguages>English, French, German</activityLanguages>
+    <culturalTheme>Ancient History and Archaeology</culturalTheme>
+    <historicalPeriod>Roman and Carthaginian Era</historicalPeriod>
+    <audioGuideAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</audioGuideAvailable>
+    <photographyAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</photographyAllowed>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Cultural_RomanRuins">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#CulturalActivity"/>
+    <activityId>CULT-003</activityId>
+    <activityName>Roman Ruins Exploration</activityName>
+    <activityDescription>Full-day tour of ancient Roman ruins including amphitheaters and temples</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">85.0</pricePerPerson>
+    <difficultyLevel>Easy-Moderate</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.8</activityRating>
+    <schedule>Wednesday and Saturday 8:00 AM - 4:00 PM</schedule>
+    <activityLanguages>English, French, Italian</activityLanguages>
+    <culturalTheme>Roman History and Architecture</culturalTheme>
+    <historicalPeriod>2nd-5th Century AD</historicalPeriod>
+    <audioGuideAvailable rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</audioGuideAvailable>
+    <photographyAllowed rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</photographyAllowed>
+</owl:NamedIndividual>
+
+<!-- Nature Activity Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Nature_BirdWatching">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+    <activityId>NAT-001</activityId>
+    <activityName>Migratory Bird Watching</activityName>
+    <activityDescription>Guided bird watching tour in protected wetlands during migration season</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">60.0</pricePerPerson>
+    <difficultyLevel>Easy</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.6</activityRating>
+    <schedule>Daily at sunrise and sunset</schedule>
+    <activityLanguages>English, French</activityLanguages>
+    <ecosystemType>Wetlands and Marshlands</ecosystemType>
+    <wildlifeSpotting>Flamingos, herons, ducks, migratory birds</wildlifeSpotting>
+    <bestTimeToVisit>October-April (Migration Season)</bestTimeToVisit>
+    <binocularsProvided rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</binocularsProvided>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Nature_ForestHike">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+    <activityId>NAT-002</activityId>
+    <activityName>Forest Ecology Hike</activityName>
+    <activityDescription>Educational hike through protected forest learning about local flora and fauna</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">55.0</pricePerPerson>
+    <difficultyLevel>Moderate</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.7</activityRating>
+    <schedule>Tuesday, Thursday, Saturday 9:00 AM - 2:00 PM</schedule>
+    <activityLanguages>English, French</activityLanguages>
+    <ecosystemType>Mediterranean Forest</ecosystemType>
+    <wildlifeSpotting>Wild boar, deer, various bird species, reptiles</wildlifeSpotting>
+    <bestTimeToVisit>Spring and Autumn</bestTimeToVisit>
+    <binocularsProvided rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</binocularsProvided>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Nature_CoastalKayak">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#NatureActivity"/>
+    <activityId>NAT-003</activityId>
+    <activityName>Coastal Kayaking Adventure</activityName>
+    <activityDescription>Sea kayaking along pristine coastline exploring hidden coves and marine life</activityDescription>
+    <durationHours rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</durationHours>
+    <pricePerPerson rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75.0</pricePerPerson>
+    <difficultyLevel>Beginner</difficultyLevel>
+    <maxParticipants rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</maxParticipants>
+    <minAge rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">10</minAge>
+    <activityRating rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4.8</activityRating>
+    <schedule>Daily 10:00 AM and 3:00 PM (weather permitting)</schedule>
+    <activityLanguages>English, French</activityLanguages>
+    <ecosystemType>Coastal and Marine</ecosystemType>
+    <wildlifeSpotting>Dolphins, sea turtles, various fish species</wildlifeSpotting>
+    <bestTimeToVisit>May-September</bestTimeToVisit>
+    <binocularsProvided rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</binocularsProvided>
+</owl:NamedIndividual>
+
+<!-- ========== LOCATION INSTANCES ========== -->
+
+<!-- City Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#City_Tunis">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#City"/>
+    <locationId>CITY-001</locationId>
+    <locationName>Tunis</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.8065</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.1815</longitude>
+    <address>Capital City of Tunisia</address>
+    <locationDescription>Historic capital city with ancient medina, modern districts, and rich cultural heritage</locationDescription>
+    <population rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">638845</population>
+    <postalCode>1000</postalCode>
+    <touristAttractions>Ancient Medina, Bardo Museum, Cathedral of St. Vincent de Paul, Habib Bourguiba Avenue</touristAttractions>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#City_Sousse">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#City"/>
+    <locationId>CITY-002</locationId>
+    <locationName>Sousse</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35.8288</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.6405</longitude>
+    <address>Coastal City, Tunisia</address>
+    <locationDescription>Major coastal city with beautiful beaches, historic medina, and vibrant souks</locationDescription>
+    <population rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">221530</population>
+    <postalCode>4000</postalCode>
+    <touristAttractions>Sousse Medina, Ribat of Sousse, Port El Kantaoui, Archaeological Museum</touristAttractions>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#City_Hammamet">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#City"/>
+    <locationId>CITY-003</locationId>
+    <locationName>Hammamet</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.4000</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.6167</longitude>
+    <address>Coastal Resort Town, Tunisia</address>
+    <locationDescription>Popular beach resort town known for its beautiful coastline and historic kasbah</locationDescription>
+    <population rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">97579</population>
+    <postalCode>8050</postalCode>
+    <touristAttractions>Hammamet Beach, Medina of Hammamet, International Cultural Center, Yasmin Hammamet</touristAttractions>
+</owl:NamedIndividual>
+
+<!-- Natural Site Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#NaturalSite_IchkeulPark">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#NaturalSite"/>
+    <locationId>NAT-001</locationId>
+    <locationName>Ichkeul National Park</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">37.1667</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.6667</longitude>
+    <address>Bizerte Governorate, Tunisia</address>
+    <locationDescription>UNESCO World Heritage site with lake and wetlands important for migratory birds</locationDescription>
+    <protectedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protectedStatus>
+    <biodiversityIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.7</biodiversityIndex>
+    <areaSizeHectares rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12600.0</areaSizeHectares>
+    <entryFee rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.0</entryFee>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#NaturalSite_DouggaRuins">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#NaturalSite"/>
+    <locationId>NAT-002</locationId>
+    <locationName>Dougga Archaeological Site</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.4231</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">9.2192</longitude>
+    <address>Béja Governorate, Tunisia</address>
+    <locationDescription>UNESCO World Heritage site with exceptionally well-preserved Roman ruins in natural setting</locationDescription>
+    <protectedStatus rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</protectedStatus>
+    <biodiversityIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#float">6.2</biodiversityIndex>
+    <areaSizeHectares rdf:datatype="http://www.w3.org/2001/XMLSchema#float">75.0</areaSizeHectares>
+    <entryFee rdf:datatype="http://www.w3.org/2001/XMLSchema#float">8.0</entryFee>
+</owl:NamedIndividual>
+
+<!-- Region Instances -->
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Region_TunisRegion">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Region"/>
+    <locationId>REG-001</locationId>
+    <locationName>Tunis Region</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.8</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.18</longitude>
+    <address>Northern Tunisia</address>
+    <locationDescription>Capital region including Tunis and surrounding coastal areas</locationDescription>
+    <climateType>Mediterranean</climateType>
+    <regionArea rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3468.0</regionArea>
+    <mainAttractions>Ancient Medina, Carthage ruins, Sidi Bou Said, Bardo Museum</mainAttractions>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Region_Sahel">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Region"/>
+    <locationId>REG-002</locationId>
+    <locationName>Sahel Region</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">35.5</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.5</longitude>
+    <address>Eastern Coastal Tunisia</address>
+    <locationDescription>Coastal region known for olive groves, beaches, and historic cities</locationDescription>
+    <climateType>Mediterranean</climateType>
+    <regionArea rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12642.0</regionArea>
+    <mainAttractions>Sousse Medina, Monastir Ribat, El Jem Amphitheater, Sahel beaches</mainAttractions>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Region_CapBon">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Region"/>
+    <locationId>REG-003</locationId>
+    <locationName>Cap Bon Peninsula</locationName>
+    <latitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">36.75</latitude>
+    <longitude rdf:datatype="http://www.w3.org/2001/XMLSchema#float">10.75</longitude>
+    <address>Northeastern Tunisia</address>
+    <locationDescription>Scenic peninsula with citrus groves, fishing villages, and resort towns</locationDescription>
+    <climateType>Mediterranean</climateType>
+    <regionArea rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1500.0</regionArea>
+    <mainAttractions>Hammamet beaches, Nabeul pottery, Kerkouane Punic town, Kelibia Fort</mainAttractions>
+</owl:NamedIndividual>
+
+<!-- ========== SEASON INSTANCES ========== -->
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Season_Spring">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+    <seasonName>Spring</seasonName>
+    <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-03-01T00:00:00</startDate>
+    <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-05-31T23:59:59</endDate>
+    <averageTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float">20.0</averageTemperature>
+    <peakTourismSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</peakTourismSeason>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Season_Summer">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+    <seasonName>Summer</seasonName>
+    <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-06-01T00:00:00</startDate>
+    <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-08-31T23:59:59</endDate>
+    <averageTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float">28.0</averageTemperature>
+    <peakTourismSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</peakTourismSeason>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Season_Autumn">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+    <seasonName>Autumn</seasonName>
+    <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-09-01T00:00:00</startDate>
+    <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-11-30T23:59:59</endDate>
+    <averageTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float">22.0</averageTemperature>
+    <peakTourismSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</peakTourismSeason>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Season_Winter">
+    <rdf:type rdf:resource="http://www.ecotourism.org/ontology#Season"/>
+    <seasonName>Winter</seasonName>
+    <startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-01T00:00:00</startDate>
+    <endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-02-28T23:59:59</endDate>
+    <averageTemperature rdf:datatype="http://www.w3.org/2001/XMLSchema#float">12.0</averageTemperature>
+    <peakTourismSeason rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">false</peakTourismSeason>
+</owl:NamedIndividual>
+
+    <!-- =============================================== -->
+    <!-- OBJECT PROPERTY ASSERTIONS (RELATIONSHIPS) -->
+    <!-- =============================================== -->
+
+    <!-- Transport Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Bike_EcoCity_01">
+        <connectsLocation rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <connectsLocation rdf:resource="http://www.ecotourism.org/ontology#NaturalSite_IchkeulPark"/>
+        <hasImpact rdf:resource="http://www.ecotourism.org/ontology#Carbon_VeryLow"/>
+        <operatedBy rdf:resource="http://www.ecotourism.org/ontology#Guide_MohamedBenAli"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EV_Tesla_01">
+        <connectsLocation rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <connectsLocation rdf:resource="http://www.ecotourism.org/ontology#Region_Sahel"/>
+        <hasImpact rdf:resource="http://www.ecotourism.org/ontology#Carbon_VeryLow"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#PT_Metro_01">
+        <connectsLocation rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <connectsLocation rdf:resource="http://www.ecotourism.org/ontology#City_Hammamet"/>
+        <hasImpact rdf:resource="http://www.ecotourism.org/ontology#Carbon_Low"/>
+    </owl:NamedIndividual>
+
+    <!-- Activity Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Adventure_SaharaTrek">
+        <takesPlaceIn rdf:resource="http://www.ecotourism.org/ontology#Region_Sahel"/>
+        <guidedBy rdf:resource="http://www.ecotourism.org/ontology#Guide_MohamedBenAli"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Autumn"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Winter"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Spring"/>
+        <hasReview rdf:resource="http://www.ecotourism.org/ontology#Feedback_001"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Cultural_MedinaWalk">
+        <takesPlaceIn rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <guidedBy rdf:resource="http://www.ecotourism.org/ontology#Guide_FatimaTrabelsi"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Spring"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Autumn"/>
+        <hasReview rdf:resource="http://www.ecotourism.org/ontology#Feedback_002"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Nature_BirdWatching">
+        <takesPlaceIn rdf:resource="http://www.ecotourism.org/ontology#NaturalSite_IchkeulPark"/>
+        <guidedBy rdf:resource="http://www.ecotourism.org/ontology#Guide_AhmedKhalil"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Winter"/>
+        <availableInSeason rdf:resource="http://www.ecotourism.org/ontology#Season_Spring"/>
+    </owl:NamedIndividual>
+
+    <!-- Accommodation Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#EcoLodge_GreenValley">
+        <locatedIn rdf:resource="http://www.ecotourism.org/ontology#Region_TunisRegion"/>
+        <receivesBooking rdf:resource="http://www.ecotourism.org/ontology#Booking_001"/>
+        <hasSustainabilityMetric rdf:resource="http://www.ecotourism.org/ontology#Carbon_VeryLow"/>
+        <hasSustainabilityMetric rdf:resource="http://www.ecotourism.org/ontology#RenewableEnergy_Excellent"/>
+        <hasSustainabilityMetric rdf:resource="http://www.ecotourism.org/ontology#Water_Efficient"/>
+        <reviewedBy rdf:resource="http://www.ecotourism.org/ontology#Feedback_001"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#GuestHouse_MedinaHeart">
+        <locatedIn rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <receivesBooking rdf:resource="http://www.ecotourism.org/ontology#Booking_002"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Hotel_SeaBreeze">
+        <locatedIn rdf:resource="http://www.ecotourism.org/ontology#City_Sousse"/>
+        <hasSustainabilityMetric rdf:resource="http://www.ecotourism.org/ontology#Carbon_Medium"/>
+    </owl:NamedIndividual>
+
+    <!-- Booking Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Booking_001">
+        <madeBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_AliceJohnson"/>
+        <concernsAccommodation rdf:resource="http://www.ecotourism.org/ontology#EcoLodge_GreenValley"/>
+        <concernsActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_SaharaTrek"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Booking_002">
+        <madeBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_BenjaminMartin"/>
+        <concernsAccommodation rdf:resource="http://www.ecotourism.org/ontology#GuestHouse_MedinaHeart"/>
+        <concernsActivity rdf:resource="http://www.ecotourism.org/ontology#Cultural_MuseumTour"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Booking_003">
+        <madeBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_SarahMuller"/>
+        <concernsActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_RockClimbing"/>
+    </owl:NamedIndividual>
+
+    <!-- Feedback Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Feedback_001">
+        <writtenBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_AliceJohnson"/>
+        <reviewsAccommodation rdf:resource="http://www.ecotourism.org/ontology#EcoLodge_GreenValley"/>
+        <reviewsActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_SaharaTrek"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Feedback_002">
+        <writtenBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_BenjaminMartin"/>
+        <reviewsActivity rdf:resource="http://www.ecotourism.org/ontology#Cultural_MuseumTour"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Feedback_003">
+        <writtenBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_SarahMuller"/>
+        <reviewsActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_RockClimbing"/>
+    </owl:NamedIndividual>
+
+    <!-- Local Product Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Product_OliveOil">
+        <producedIn rdf:resource="http://www.ecotourism.org/ontology#Region_Sahel"/>
+        <purchasedBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_AliceJohnson"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Product_BerberCarpet">
+        <producedIn rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <purchasedBy rdf:resource="http://www.ecotourism.org/ontology#Tourist_BenjaminMartin"/>
+    </owl:NamedIndividual>
+
+    <!-- Location Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Region_TunisRegion">
+        <containsLocation rdf:resource="http://www.ecotourism.org/ontology#City_Tunis"/>
+        <containsLocation rdf:resource="http://www.ecotourism.org/ontology#NaturalSite_IchkeulPark"/>
+        <hostsActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_SaharaTrek"/>
+        <hasAccommodation rdf:resource="http://www.ecotourism.org/ontology#EcoLodge_GreenValley"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#City_Tunis">
+        <containsLocation rdf:resource="http://www.ecotourism.org/ontology#GuestHouse_MedinaHeart"/>
+        <hostsActivity rdf:resource="http://www.ecotourism.org/ontology#Cultural_MedinaWalk"/>
+        <hasAccommodation rdf:resource="http://www.ecotourism.org/ontology#Hotel_GrandPalace"/>
+    </owl:NamedIndividual>
+
+    <!-- Season Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Season_Spring">
+        <favorableFor rdf:resource="http://www.ecotourism.org/ontology#Nature_BirdWatching"/>
+        <favorableFor rdf:resource="http://www.ecotourism.org/ontology#Cultural_MedinaWalk"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Season_Summer">
+        <favorableFor rdf:resource="http://www.ecotourism.org/ontology#Adventure_Diving"/>
+        <favorableFor rdf:resource="http://www.ecotourism.org/ontology#Nature_CoastalKayak"/>
+    </owl:NamedIndividual>
+
+    <!-- Sustainability Indicator Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Carbon_VeryLow">
+        <measuresImpactOf rdf:resource="http://www.ecotourism.org/ontology#EcoLodge_GreenValley"/>
+        <measuresImpactOf rdf:resource="http://www.ecotourism.org/ontology#EcoLodge_DesertOasis"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#RenewableEnergy_Excellent">
+        <measuresImpactOf rdf:resource="http://www.ecotourism.org/ontology#EcoLodge_GreenValley"/>
+    </owl:NamedIndividual>
+
+    <!-- User Profile Relationships -->
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Tourist_AliceJohnson">
+        <makesBooking rdf:resource="http://www.ecotourism.org/ontology#Booking_001"/>
+        <writesReview rdf:resource="http://www.ecotourism.org/ontology#Feedback_001"/>
+        <usedByTourist rdf:resource="http://www.ecotourism.org/ontology#Bike_EcoCity_01"/>
+        <bookedBy rdf:resource="http://www.ecotourism.org/ontology#Adventure_SaharaTrek"/>
+        <purchasedBy rdf:resource="http://www.ecotourism.org/ontology#Product_OliveOil"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Tourist_BenjaminMartin">
+        <makesBooking rdf:resource="http://www.ecotourism.org/ontology#Booking_002"/>
+        <writesReview rdf:resource="http://www.ecotourism.org/ontology#Feedback_002"/>
+        <bookedBy rdf:resource="http://www.ecotourism.org/ontology#Cultural_MuseumTour"/>
+        <purchasedBy rdf:resource="http://www.ecotourism.org/ontology#Product_BerberCarpet"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Guide_MohamedBenAli">
+        <guidesActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_SaharaTrek"/>
+        <guidesActivity rdf:resource="http://www.ecotourism.org/ontology#Adventure_RockClimbing"/>
+        <operatedBy rdf:resource="http://www.ecotourism.org/ontology#Bike_EcoCity_01"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Guide_FatimaTrabelsi">
+        <guidesActivity rdf:resource="http://www.ecotourism.org/ontology#Cultural_MedinaWalk"/>
+        <guidesActivity rdf:resource="http://www.ecotourism.org/ontology#Cultural_MuseumTour"/>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.ecotourism.org/ontology#Guide_AhmedKhalil">
+        <guidesActivity rdf:resource="http://www.ecotourism.org/ontology#Nature_BirdWatching"/>
+        <guidesActivity rdf:resource="http://www.ecotourism.org/ontology#Nature_ForestHike"/>
+    </owl:NamedIndividual>
+
+</rdf:RDF>

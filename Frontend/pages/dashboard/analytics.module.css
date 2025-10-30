@@ -1,0 +1,482 @@
+.container {
+    padding: 1rem;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.lastUpdated {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
+.refreshBtn {
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.refreshBtn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+}
+
+.refreshBtn:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    color: #64748b;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid #e2e8f0;
+    border-top-color: #6366f1;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.error {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+/* Section Styles */
+.section {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 1.5rem;
+    color: #0f172a;
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Stats Grid */
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.statCard {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.statCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.statIcon {
+    font-size: 3rem;
+    line-height: 1;
+}
+
+.statContent {
+    flex: 1;
+}
+
+.statContent h3 {
+    font-size: 0.9rem;
+    color: #64748b;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1;
+    margin-bottom: 0.25rem;
+}
+
+.statLabel {
+    font-size: 0.85rem;
+    color: #94a3b8;
+}
+
+/* Bar Chart */
+.chartContainer {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.barChart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.barItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.barLabel {
+    min-width: 150px;
+    font-weight: 600;
+    color: #475569;
+    font-size: 0.9rem;
+}
+
+.barWrapper {
+    flex: 1;
+    height: 40px;
+    background: #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.barFill {
+    height: 100%;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 1rem;
+    transition: width 0.5s ease;
+    position: relative;
+}
+
+.barValue {
+    color: white;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* Table Styles */
+.tableContainer {
+    overflow-x: auto;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead {
+    background: #34495e;
+}
+
+.table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: white;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid #e2e8f0;
+    color: #0f172a;
+}
+
+.table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.rankCell {
+    text-align: center;
+}
+
+.rank {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    color: white;
+    border-radius: 50%;
+    font-weight: 700;
+}
+
+.rating {
+    color: #f59e0b;
+    font-weight: 600;
+}
+
+.ecoScore {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background: #d1fae5;
+    color: #065f46;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Region Grid */
+.regionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.regionCard {
+    background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.regionCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.regionCard h3 {
+    margin: 0 0 1rem 0;
+    color: #78350f;
+    font-size: 1.2rem;
+}
+
+.regionStats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.regionStat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.regionStatLabel {
+    color: #92400e;
+    font-weight: 500;
+}
+
+.regionStatValue {
+    color: #78350f;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Difficulty Grid */
+.difficultyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+.difficultyCard {
+    background: white;
+    border: 3px solid;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.difficultyCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.difficultyHeader h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.difficultyCount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.difficultyLabel {
+    color: #64748b;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Accommodation Grid */
+.accommodationGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.accommodationCard {
+    background: linear-gradient(135deg, #dbeafe 0%, #bfdbfe 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.accommodationCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.accommodationIcon {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.accommodationCard h3 {
+    margin: 0 0 1rem 0;
+    color: #1e3a8a;
+    font-size: 1.1rem;
+}
+
+.accommodationStats {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.accommodationStat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #1e40af;
+}
+
+.accommodationStat span {
+    font-weight: 500;
+}
+
+.accommodationStat strong {
+    font-size: 1.1rem;
+}
+
+.noData {
+    text-align: center;
+    padding: 3rem;
+    color: #64748b;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .header h1 {
+        font-size: 1.8rem;
+    }
+
+    .section {
+        padding: 1.5rem;
+    }
+
+    .statsGrid,
+    .regionGrid,
+    .difficultyGrid,
+    .accommodationGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .barItem {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .barLabel {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .table {
+        font-size: 0.85rem;
+    }
+
+    .table th,
+    .table td {
+        padding: 0.75rem 0.5rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.section:nth-child(1) { animation-delay: 0.1s; }
+.section:nth-child(2) { animation-delay: 0.2s; }
+.section:nth-child(3) { animation-delay: 0.3s; }
+.section:nth-child(4) { animation-delay: 0.4s; }
+.section:nth-child(5) { animation-delay: 0.5s; }

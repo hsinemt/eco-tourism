@@ -1,0 +1,929 @@
+/* components/dashboard/feedback.module.css */
+
+.container {
+    padding: 2rem;
+    background: #f5f5f5;
+    min-height: 100vh;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+    color: #2c5530;
+    font-weight: 700;
+}
+
+.header p {
+    color: #666;
+    margin: 0.5rem 0 0 0;
+}
+
+.headerButtons {
+    display: flex;
+    gap: 1rem;
+}
+
+.primaryBtn,
+.statsBtn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.95rem;
+}
+
+.primaryBtn {
+    background: #2c5530;
+    color: white;
+}
+
+.primaryBtn:hover {
+    background: #1e3a22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(44, 85, 48, 0.3);
+}
+
+.statsBtn {
+    background: white;
+    color: #2c5530;
+    border: 2px solid #2c5530;
+}
+
+.statsBtn:hover {
+    background: #f0f9f0;
+}
+
+.error {
+    background: #fee2e2;
+    border: 2px solid #ef4444;
+    color: #dc2626;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dismissError {
+    background: none;
+    border: none;
+    color: #dc2626;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.searchSection {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.searchInput {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.searchBtn {
+    padding: 0.75rem 1.5rem;
+    background: #2c5530;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.filterSelect,
+.filterInput {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    flex: 1;
+    min-width: 150px;
+}
+
+.clearBtn {
+    padding: 0.75rem 1.5rem;
+    background: #f0f0f0;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.clearBtn:hover {
+    background: #e0e0e0;
+}
+
+.tableSection {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table thead tr {
+    background: #2c5530;
+    color: white;
+}
+
+.table th {
+    padding: 1rem;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.table tbody tr:hover {
+    background: #f9f9f9;
+}
+
+.userName {
+    font-weight: 600;
+    color: #2c5530;
+}
+
+.activity {
+    color: #666;
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.rating {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+}
+
+.comment {
+    color: #666;
+    max-width: 300px;
+}
+
+.date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.actions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.viewBtn,
+.editBtn,
+.deleteBtn {
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.viewBtn {
+    background: #06b6d4;
+    color: white;
+}
+
+.viewBtn:hover {
+    background: #0891b2;
+    transform: translateY(-2px);
+}
+
+.editBtn {
+    background: #fbbf24;
+    color: #333;
+}
+
+.editBtn:hover {
+    background: #f59e0b;
+    transform: translateY(-2px);
+}
+
+.deleteBtn {
+    background: #ef4444;
+    color: white;
+}
+
+.deleteBtn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modalContent {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 600px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #f0f0f0;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.closeBtn:hover {
+    background: #e0e0e0;
+    transform: rotate(90deg);
+}
+
+.modalContent h2 {
+    margin: 0 0 1.5rem 0;
+    color: #2c5530;
+    font-size: 1.5rem;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.formGroup input,
+.formGroup select,
+.formGroup textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus,
+.formGroup textarea:focus {
+    outline: none;
+    border-color: #2c5530;
+}
+
+.modalActions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.cancelBtn,
+.submitBtn,
+.deleteConfirmBtn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cancelBtn {
+    background: #e0e0e0;
+    color: #333;
+}
+
+.cancelBtn:hover {
+    background: #ccc;
+}
+
+.submitBtn {
+    background: #2c5530;
+    color: white;
+}
+
+.submitBtn:hover {
+    background: #1e3a22;
+    transform: translateY(-2px);
+}
+
+.submitBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.deleteConfirmBtn {
+    background: #ef4444;
+    color: white;
+}
+
+.deleteConfirmBtn:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.deleteConfirmBtn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.detailBox {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+.detailRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detailRow:last-child {
+    border-bottom: none;
+}
+
+.detailRow strong {
+    color: #333;
+    min-width: 120px;
+}
+
+.detailRow span {
+    color: #666;
+    word-break: break-word;
+    flex: 1;
+    text-align: right;
+}
+
+.warning {
+    background: #fee2e2;
+    border: 2px solid #fca5a5;
+    color: #dc2626;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1.5rem 0;
+    font-weight: 600;
+}
+
+.statsBox {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.statsBox h3 {
+    margin: 0 0 1rem 0;
+    color: #2c5530;
+}
+
+.statsBox pre {
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.85rem;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .header {
+        flex-direction: column;
+    }
+
+    .headerButtons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .primaryBtn,
+    .statsBtn {
+        width: 100%;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filterSelect,
+    .filterInput {
+        min-width: 100%;
+    }
+
+    .actions {
+        flex-wrap: wrap;
+    }
+
+    .modalContent {
+        max-width: 95%;
+    }
+}
+
+/* Add these new styles to feedback.module.css */
+
+.largeModalContent {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.statsForm {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.statsContainer {
+    margin-top: 2rem;
+}
+
+.statsContainer h3 {
+    color: #2c5530;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.statCard {
+    background: linear-gradient(135deg, #f0f9f0 0%, #e0f2e0 100%);
+    border: 2px solid #c6f6d5;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.statCard span {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.statCard strong {
+    display: block;
+    color: #2c5530;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0.5rem 0;
+}
+
+.statCard p {
+    margin: 0;
+    color: #64748b;
+    font-size: 0.9rem;
+}
+
+.summaryBox {
+    background: #dbeafe;
+    border: 2px solid #7dd3fc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summaryBox h4 {
+    margin: 0 0 1rem 0;
+    color: #1e40af;
+}
+
+.summaryBox p {
+    margin: 0;
+    color: #1e40af;
+    line-height: 1.6;
+}
+
+.reviewsList {
+    margin-bottom: 2rem;
+}
+
+.reviewsList h4 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.reviewsContainer {
+    display: grid;
+    gap: 1rem;
+}
+
+.reviewCard {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.reviewCard:hover {
+    border-color: #2c5530;
+    box-shadow: 0 4px 12px rgba(44, 85, 48, 0.1);
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.reviewHeader strong {
+    color: #2c5530;
+    font-size: 1rem;
+}
+
+.reviewRating {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.reviewComment {
+    color: #666;
+    margin: 1rem 0;
+    line-height: 1.5;
+}
+
+.reviewDate {
+    color: #999;
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .largeModalContent {
+        max-width: 95%;
+    }
+
+    .statsGrid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.75rem;
+    }
+
+    .statCard {
+        padding: 1rem;
+    }
+
+    .statCard strong {
+        font-size: 1.5rem;
+    }
+}
+/* Enhanced Activity Stats Modal Styles */
+
+.statsResultsContainer {
+    margin-top: 2rem;
+}
+
+.statsResultsHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #2c5530;
+}
+
+.statsResultsHeader h3 {
+    margin: 0;
+    color: #2c5530;
+    font-size: 1.25rem;
+}
+
+.newSearchBtn {
+    padding: 0.6rem 1.2rem;
+    background: #f0f9f0;
+    color: #2c5530;
+    border: 2px solid #2c5530;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.newSearchBtn:hover {
+    background: #2c5530;
+    color: white;
+}
+
+/* Summary Cards */
+.summaryCards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.summaryCard {
+    background: linear-gradient(135deg, #f0f9f0 0%, #e0f2e0 100%);
+    border: 2px solid #c6f6d5;
+    border-radius: 12px;
+    padding: 1.5rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.cardIcon {
+    font-size: 2.5rem;
+    min-width: 60px;
+    text-align: center;
+}
+
+.cardContent {
+    flex: 1;
+}
+
+.cardContent span {
+    display: block;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.cardContent strong {
+    display: block;
+    color: #2c5530;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.cardSubtext {
+    margin: 0.5rem 0 0 0;
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+/* Rating Distribution */
+.ratingDistributionBox {
+    background: #f9f9f9;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.ratingDistributionBox h4 {
+    margin: 0 0 1.5rem 0;
+    color: #2c5530;
+    font-size: 1.1rem;
+}
+
+.distributionCards {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ratingCard {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1rem;
+    align-items: center;
+}
+
+.ratingLabel {
+    font-weight: 700;
+    color: #2c5530;
+    text-align: center;
+}
+
+.ratingBar {
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 24px;
+    overflow: hidden;
+}
+
+.ratingFill {
+    height: 100%;
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.ratingCount {
+    font-weight: 700;
+    color: #2c5530;
+    text-align: right;
+    min-width: 50px;
+}
+
+/* Reviews List */
+.reviewsList {
+    margin-bottom: 2rem;
+}
+
+.reviewsList h4 {
+    margin: 0 0 1.5rem 0;
+    color: #2c5530;
+    font-size: 1.1rem;
+}
+
+.reviewsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.reviewCard {
+    background: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+}
+
+.reviewCard:hover {
+    border-color: #2c5530;
+    box-shadow: 0 4px 12px rgba(44, 85, 48, 0.1);
+}
+
+.reviewHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.reviewUserInfo {
+    flex: 1;
+}
+
+.reviewUserInfo strong {
+    display: block;
+    color: #2c5530;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.reviewDate {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.reviewRating {
+    color: #f59e0b;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+}
+
+.reviewComment {
+    color: #666;
+    margin: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* Summary Text Box */
+.summaryTextBox {
+    background: #dbeafe;
+    border: 2px solid #7dd3fc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.summaryTextBox h4 {
+    margin: 0 0 1rem 0;
+    color: #1e40af;
+}
+
+.summaryTextBox p {
+    margin: 0;
+    color: #1e40af;
+    line-height: 1.6;
+}
+
+/* No Data Message */
+.noDataBox {
+    background: #f0f0f0;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    color: #999;
+    margin: 2rem 0;
+}
+
+.noDataBox p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .statsResultsHeader {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .summaryCards {
+        grid-template-columns: 1fr;
+    }
+
+    .ratingCard {
+        grid-template-columns: 45px 1fr 40px;
+        gap: 0.75rem;
+    }
+
+    .reviewCard {
+        padding: 1rem;
+    }
+
+    .reviewHeader {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+}
