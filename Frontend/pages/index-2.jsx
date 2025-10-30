@@ -156,30 +156,30 @@ const Index2 = () => {
                                             </div>
                                         </div>
 
-                                        <div className="col-lg-12">
-                                            <div className="form_group" style={{ marginBottom: "30px" }}>
-                                                <label style={{
-                                                    display: "flex",
-                                                    alignItems: "center",
-                                                    cursor: "pointer",
-                                                    fontSize: "15px",
-                                                    color: "#333"
-                                                }}>
-                                                    <input
-                                                        type="checkbox"
-                                                        checked={useAdvancedNLP}
-                                                        onChange={(e) => setUseAdvancedNLP(e.target.checked)}
-                                                        style={{
-                                                            marginRight: "10px",
-                                                            width: "18px",
-                                                            height: "18px",
-                                                            cursor: "pointer"
-                                                        }}
-                                                    />
-                                                    Use Advanced NLP Processing
-                                                </label>
-                                            </div>
-                                        </div>
+                                        {/*<div className="col-lg-12">*/}
+                                        {/*    <div className="form_group" style={{ marginBottom: "30px" }}>*/}
+                                        {/*        <label style={{*/}
+                                        {/*            display: "flex",*/}
+                                        {/*            alignItems: "center",*/}
+                                        {/*            cursor: "pointer",*/}
+                                        {/*            fontSize: "15px",*/}
+                                        {/*            color: "#333"*/}
+                                        {/*        }}>*/}
+                                        {/*            <input*/}
+                                        {/*                type="checkbox"*/}
+                                        {/*                checked={useAdvancedNLP}*/}
+                                        {/*                onChange={(e) => setUseAdvancedNLP(e.target.checked)}*/}
+                                        {/*                style={{*/}
+                                        {/*                    marginRight: "10px",*/}
+                                        {/*                    width: "18px",*/}
+                                        {/*                    height: "18px",*/}
+                                        {/*                    cursor: "pointer"*/}
+                                        {/*                }}*/}
+                                        {/*            />*/}
+                                        {/*            Use Advanced NLP Processing*/}
+                                        {/*        </label>*/}
+                                        {/*    </div>*/}
+                                        {/*</div>*/}
                                     </div>
 
                                     {error && (
