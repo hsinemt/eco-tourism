@@ -548,18 +548,42 @@ def update_transport(transport_id: str, update: TransportUpdate):
 # DELETE /transports/{transport_id} - Supprimer un transport
 @router.delete("/{transport_id}", summary="Supprimer un transport")
 def delete_transport(transport_id: str):
-    """Supprime un transport de la base"""
-    sparql = f"""
-    PREFIX eco: <http://www.ecotourism.org/ontology#>
-    DELETE WHERE {{ eco:{transport_id} ?p ?o . }}
-    """
+    """Supprime un transport de la base par son transportId, quel que soit son URI exacte"""
     try:
-        result = sparql_delete(sparql)
+        # 1) Vérifier l'existence via la propriété eco:transportId
+        check_sparql = f"""
+        PREFIX eco: <http://www.ecotourism.org/ontology#>
+        SELECT ?transport
+        WHERE {{
+          ?transport eco:transportId "{transport_id}" .
+        }}
+        LIMIT 1
+        """
+        check_result = sparql_select(check_sparql)
+        binds = check_result.get('results', {}).get('bindings', []) if isinstance(check_result, dict) else []
+        if not binds:
+            raise HTTPException(status_code=404, detail=f"Transport '{transport_id}' not found")
+
+        # 2) Supprimer toutes les triples du sujet trouvé (plus robuste que d'assumer eco:{transport_id})
+        delete_sparql = f"""
+        PREFIX eco: <http://www.ecotourism.org/ontology#>
+        DELETE {{
+          ?transport ?p ?o .
+        }}
+        WHERE {{
+          ?transport eco:transportId "{transport_id}" .
+          ?transport ?p ?o .
+        }}
+        """
+        result = sparql_delete(delete_sparql)
+
         return {
             "status": "success",
             "message": f"Transport '{transport_id}' supprimé avec succès",
             "transport_id": transport_id
         }
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

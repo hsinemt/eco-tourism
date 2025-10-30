@@ -123,6 +123,15 @@ const DeskTopMenu = () => {
                 <li>
                     <Link href="sustainability">Sustainability</Link>
                 </li>
+                <li>
+                    <Link href="location">Location</Link>
+                </li>
+                <li>
+                    <Link href="transport">Transport</Link>
+                </li>
+                <li>
+                    <Link href="analytics">Analytics</Link>
+                </li>
             </ul>
           </li>
           <li className="menu-item has-children">
